@@ -151,7 +151,6 @@
 
 ---
 
-
 <!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
 ## Summary
 
