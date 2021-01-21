@@ -72,7 +72,7 @@
 ---
 
 <!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
-## Working with the JavaScript API
+## Demo: Build an App from Scratch
 
 ---
 
@@ -105,49 +105,205 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
-## Advanced API concepts
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+## Tip!
+
+* [ArcGIS API for JavaScript Snippets](https://marketplace.visualstudio.com/items?itemName=Esri.arcgis-jsapi-snippets)
 
 ---
 
 <!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
-## Promises
+## Demo Steps:
 
-- In 4.7, promises are more compatible with native promises
-- Replaced `then` with `when` for `esri/core/Promise`
-- Typings are more compatible (although not fully compatible)
-- General advice is to wrap API promises in native if needed
-  until JS API switches to native promises
-
----
-
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
-## Writing Accessor based classes
-
-- Can be useful to use Accessor based classes in your app
-- Also required for creating custom API based widgets
-- API classes are using dojo declare, requires some additional work to integrate with TS
-- [Code](./demos/subclass)
+* `mkdir ts-demo && cd ts-demo`
+* `mkdir app && mkdir css`
+* `npm init --yes && tsc --init`
+* `npm i @arcgis/core`
 
 ---
 
 <!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
-## Multiple inheritance
+## index.html
 
-- Multiple inheritance possible with dojo declare
-- Supported in typescript at runtime and strictly type-checked
-- Uses declaration merging
-- [Code](./demos/subclass)
+> Snippet shortcuts
+
+* `!`
+* `getApi`
+
+```html
+<body>
+  <div id="viewDiv"></div>
+  <script>
+    require(["app/main"]);
+  </script>
+</body>
+```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
-## Extending the API typings
+## tsconfig.json
 
-- API typings are not always as strict as they can be
-- In rare occasions typings are missing or imprecise
-- Typings can be externally "patched" through declaration merging
-- [Code](./demos/type-extensions)
+```json
+{
+  "compilerOptions": {
+    "lib": ["ES2019", "DOM"],
+    "module": "amd", // output files as AMD modules
+    "sourceMap": true,
+    "target": "ES5",
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "esModuleInterop": true
+  }
+}
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+## css/main.css
+
+```css
+html,
+body,
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+```
+
+* _and add it to html_
+
+```html
+<link rel="stylesheet" href="css/main.css">
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+## app/main.ts
+
+> imports
+
+```ts
+import WebMap from "esri/WebMap";
+import MapView from "esri/views/MapView";
+import LayerList from "esri/widgets/LayerList";
+
+import esri = __esri;
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+## app/main.ts
+
+> WebMap and MapView
+
+```ts
+const map = new WebMap({
+  portalItem: {
+    id: "d5dda743788a4b0688fe48f43ae7beb9"
+  }
+});
+
+// Add the map to a MapView
+const view = new MapView({
+  container: "viewDiv",
+  map
+});
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+## app/main.ts
+
+> LayerList
+
+```ts
+// Add a legend instance to the panel of a
+// ListItem in a LayerList instance
+const layerList = new LayerList({
+  view,
+  listItemCreatedFunction: event => {
+    const item: esri.ListItem = event.item;
+    if (item.layer.type != "group") {
+      item.panel = {
+        content: "legend",
+        open: true
+      } as esri.ListItemPanel;
+    }
+  }
+});
+view.ui.add(layerList, "top-right");
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+> start typescript compiler
+
+```bash
+tsc -w
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+### **Tip: Hide .js and .jsmap files **
+
+- Reduce clutter
+- VSCode: Add below to user preferences in files.exclude
+
+```json
+ "**/*.js.map": true,
+        "**/*.js": {
+            "when": "$(basename).ts"
+
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+### **Tip: Debugging with source maps**
+  - Enable source maps in browser dev tools
+  - Set breakpoints in .ts instead of .js
+
+  ![JS Code](using-typescript/images/transpiled.png)
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+### **Tip: Use __esri instead of import**
+- Only contains type interfaces
+- Can use when not instantiating type
+
+```ts
+import esri = __esri;
+
+const layerList = new LayerList({
+  view,
+  listItemCreatedFunction: event => {
+    const item = event.item as esri.ListItem;
+  }
+});
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+### **Where can I get more info?**
+
+- SDK Documentation
+- Esri-related training and webinars
+- ArcGIS Blogs
+- GeoNet, StackExchange, Spatial Community in Slack, etc.</br>
+</br>
+<a href="https://www.esri.com/arcgis-blog/products/js-api-arcgis/mapping/using-typescript-with-the-arcgis-api-for-javascript/" target="_blank">
+<img style="float:bottom;" src="using-typescript/images/Using_TS_blog.png" alt="Using_TS_blog">
 
 ---
 
