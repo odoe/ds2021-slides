@@ -125,17 +125,15 @@
 <!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
 ## index.html
 
-> Snippet shortcuts
-
-* `!`
-* `getApi`
-
 ```html
 <body>
-  <div id="viewDiv"></div>
-  <script>
-    require(["app/main"]);
-  </script>
+  <div class="app-container">
+    <header class="header">
+      <h2 class="heading">My ArcGIS App</h2>
+    </header>
+    <div id="viewDiv"></div>
+  </div>
+  <script src="index.js" type="module"></script>
 </body>
 ```
 
@@ -150,10 +148,9 @@
     "lib": ["ES2019", "DOM"],
     "module": "amd", // output files as AMD modules
     "sourceMap": true,
-    "target": "ES5",
+    "target": "ES2019",
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "esModuleInterop": true
+    "suppressImplicitAnyIndexErrors": true
   }
 }
 ```
@@ -188,11 +185,10 @@ body,
 > imports
 
 ```ts
-import WebMap from "esri/WebMap";
-import MapView from "esri/views/MapView";
-import LayerList from "esri/widgets/LayerList";
+import WebMap from "@arcgis/core/WebMap";
+import MapView from "@arcgis/core/views/MapView";
+import LayerList from "@arcgis/core/widgets/LayerList";
 
-import esri = __esri;
 ```
 
 ---
@@ -244,11 +240,7 @@ view.ui.add(layerList, "top-right");
 ---
 
 <!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
-> start typescript compiler
-
-```bash
-tsc -w
-```
+> Demo the build
 
 ---
 
