@@ -257,7 +257,7 @@ const map = new Map({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Basemap and Ground
 
 <iframe height='500' scrolling='no' title='VT Basemaps' src='//codepen.io/odoe/embed/preview/rpQOEM/?height=300&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/rpQOEM/'>VT Basemaps</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -368,7 +368,7 @@ watchUtils.whenTrue(view, "stationary", () => {
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Promises
 
-- All asynchronous methods return a promise, no more [events](https://developers.arcgis.com/javascript/jsapi/querytask-amd.html#events)
+- All asynchronous methods return a native promise
 - The basic pattern looks like this:
 
 ```js
@@ -379,8 +379,6 @@ layer.queryFeatures(query).then(handleResult).catch(handleError);
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Promises with async/await
-
-- work with native promises
 
 ```js
 const doQuery = async (query) => {
@@ -393,10 +391,24 @@ const doQuery = async (query) => {
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## Dynamic Imports
+
+```js
+async function loadMap(id) {
+  const { default: WebMap } = await import('@arcgis/core/WebMap');
+  return new WebMap({
+    portalItem: { id }
+  });
+}
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Promises
 
 - Load resources
-- Asychronously initialized `Layer`, `WebMap`, `WebScene`, `View`
+- Asynchronously initialized `Layer`, `WebMap`, `WebScene`, `View`
 
 ```js
 const map = new Map({...})
@@ -507,12 +519,12 @@ view.on("click", ({ x, y }) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Loadables
 
 - brings better control, and scheduling of loading resources.
 - extension of `esri/core/Promise`
-- in 3.x, instanciating a layer loads it. in 4.0, it's an explicit call
+- in 3.x, instantiating a layer loads it. in 4.0, it's an explicit call
 - the views automatically loads the map and its layers
 
 ---
@@ -530,7 +542,7 @@ view.on("click", ({ x, y }) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ```js
   //In a single page application, get a feature from a FeatureLayer from a WebMap without displaying it, ASAP!
   const webmap = new WebMap({
@@ -633,7 +645,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## createQuery
 
 - When you can do `layer.createQuery()`
