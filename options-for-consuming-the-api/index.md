@@ -1,4 +1,4 @@
-<!-- .slide: data-background="img/2021/dev-summit/bg-1.png" data-background-size="cover -->
+<!-- .slide: data-background="../img/2021/dev-summit/bg-1.png" data-background-size="cover -->
 <h1 style="text-align: left; font-size: 80px;">ArcGIS API for JavaScript:</h1>
 <h2 style="text-align: left; font-size: 60px;">Options for Consuming the API</h2>
 <p>
@@ -14,21 +14,21 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Intro/Agenda Slide
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Basic Slide
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
 ## Demo Slide
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-5.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
-![esri](img/esri-science-logo-white.png "esri")
+![esri](../img/esri-science-logo-white.png "esri")

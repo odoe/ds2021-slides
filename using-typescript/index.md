@@ -34,7 +34,7 @@
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Benefits of TypeScript
 
-![TypeScript](using-typescript/images/typescript.jpg)
+![TypeScript](./images/typescript.jpg)
 - Easier for multiple people to work on
 - Easier to refactor
 - Easier to test
@@ -264,7 +264,7 @@ view.ui.add(layerList, "top-right");
   - Enable source maps in browser dev tools
   - Set breakpoints in .ts instead of .js
 
-  ![JS Code](using-typescript/images/transpiled.png)
+  ![JS Code](./images/transpiled.png)
 
 ---
 
@@ -295,7 +295,7 @@ const layerList = new LayerList({
 - GeoNet, StackExchange, etc.</br>
 </br>
 <a href="https://www.esri.com/arcgis-blog/products/js-api-arcgis/mapping/using-typescript-with-the-arcgis-api-for-javascript/" target="_blank">
-<img style="float:bottom;" src="using-typescript/images/Using_TS_blog.png" alt="Using_TS_blog">
+<img style="float:bottom;" src="./images/Using_TS_blog.png" alt="Using_TS_blog">
 
 ---
 

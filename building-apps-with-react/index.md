@@ -1,4 +1,4 @@
-<!-- .slide: data-background="img/2021/dev-summit/bg-1.png" data-background-size="cover -->
+<!-- .slide: data-background="../img/2021/dev-summit/bg-1.png" data-background-size="cover -->
 <h1 style="text-align: left; font-size: 80px;">ArcGIS API for JavaScript:</h1>
 <h2 style="text-align: left; font-size: 60px;">Building Apps with React</h2>
 <p>
@@ -12,28 +12,28 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## ArcGIS API Framework Guides
 
-<a href="https://developers.arcgis.com/javascript/latest/guide/using-frameworks/"><img src="building-apps-with-react/images/jsapi-frameworks-screenshot.png" class="transparent" height="400" /></a>
+<a href="https://developers.arcgis.com/javascript/latest/guide/using-frameworks/"><img src="./images/jsapi-frameworks-screenshot.png" class="transparent" height="400" /></a>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## React
 
 <p><code>ui = f(s)</code></p>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## ArcGIS API for JavaScript
 
 `🌎 = new F(id, container)`
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## ArcGIS API
 
 1. <!-- .element: class="fragment" --> `Map`
@@ -45,7 +45,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## React
 
 1. <!-- .element: class="fragment" --> global state
@@ -58,7 +58,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Component as bridge
 
 <div style="display: flex; flex-direction: row; justify-content: space-between">
@@ -87,7 +87,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Use a [ref](https://reactjs.org/docs/refs-and-the-dom.html) for the `container`
 
 ```js
@@ -105,7 +105,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Create `Map` and `View` in [`componentDidMount()`](https://reactjs.org/docs/react-component.html#componentdidmount)
 
 ```js
@@ -124,7 +124,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Clean up in [`componentWillUnmount()`](https://reactjs.org/docs/react-component.html#componentwillunmount)
 
 ```js
@@ -138,7 +138,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Function Components
 
 `const NameTag = (props) => { <p>{props.name}</p> }`
@@ -153,7 +153,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### What the hook?
 
 Write function components that _use_:
@@ -163,7 +163,7 @@ Write function components that _use_:
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### React hooks
 
 * `useRef`
@@ -174,7 +174,7 @@ and [more](https://reactjs.org/docs/hooks-intro.html)!
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### `useRef` for the `container`
 
 ```jsx
@@ -189,7 +189,7 @@ export const WebMapView = () => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### `useEffect`
 
 Replaces some class lifecycle methods... mostly
@@ -199,7 +199,7 @@ Replaces some class lifecycle methods... mostly
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### `useEffect` to create map and view
 
 ```jsx
@@ -228,7 +228,7 @@ Replaces some class lifecycle methods... mostly
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### `useState`
 
 Manage local state
@@ -241,7 +241,7 @@ setReady(true);
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### "Bind" view/map properties to props/state
 
 Hold onto view in state
@@ -254,7 +254,7 @@ setView(mapView);
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### "Bind" view/map properties to props/state
 
 Then use another effect to relay changes in props/state
@@ -270,7 +270,7 @@ Then use another effect to relay changes in props/state
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### 🎉 Success! 🎉
 
 <p>✅ created a map using a `ref` to React generated DOM</p>
@@ -280,7 +280,7 @@ Then use another effect to relay changes in props/state
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Use another effect to wire up a callback
 
 ```jsx
@@ -299,7 +299,7 @@ use clean-up functions to remove event & watch handlers
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Component is key to integration
 
 <small>... class-based or hooks 🙂</small>
@@ -313,19 +313,19 @@ use clean-up functions to remove event & watch handlers
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### [Using the ArcGIS API for JavaScript with React](https://developers.arcgis.com/javascript/latest/guide/react)
 
 <iframe src="https://developers.arcgis.com/javascript/latest/guide/react/" style="width: 600px; height:  600px"></iframe>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Modern React and the ArcGIS API
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Manage global state in React
 
 * You may not need Redux/MobX
@@ -333,7 +333,7 @@ use clean-up functions to remove event & watch handlers
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### `useContext` hook
 
 ```jsx
@@ -352,12 +352,12 @@ const ThemedMap = () => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Modularize API usage
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 * Do all the API work separate from your UI
 * _Separate content from navigation_ - pattern in PWAs
 * Mock/stub API in tests
@@ -374,7 +374,7 @@ export function initialize(element: Element) {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 * Use in your context or component
 
 ```ts
@@ -393,7 +393,7 @@ useEffect(
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Why lazy load the API?
 
 * So webpack can create async bundles
@@ -403,12 +403,12 @@ useEffect(
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Suspense
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Hold your Suspense
 
 * Lazy-load entire React components
@@ -426,19 +426,19 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ##  Example: [Nearby JavaScript](https://developers.arcgis.com/example-apps/nearby-javascript/)
 
-<img class="transparent" src="building-apps-with-react/images/nearby-featured-image.png">
+<img class="transparent" src="./images/nearby-featured-image.png">
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## 😎 [@arcgis/core](https://npmjs.com/package/@arcgis/core) 👍
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Popular React Tools & Frameworks
 
 <table class="clis">
@@ -446,19 +446,19 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
     <tr>
       <td>
         <a href="https://github.com/facebook/create-react-app">
-          <img src="building-apps-with-react/images/react-js-img.png" width="240" class="transparent" />
+          <img src="./images/react-js-img.png" width="240" class="transparent" />
           <p>create-react-app</p>
         </a>
       </td>
       <td>
         <a href="https://nextjs.org/">
-          <img style="margin: 80px 0" src="building-apps-with-react/images/nextjs-white-logo.svg" width="240" class="transparent" />
+          <img style="margin: 80px 0" src="./images/nextjs-white-logo.svg" width="240" class="transparent" />
           <p>Next.js</p>
         </a>
       </td>
       <td>
         <a href="https://www.gatsbyjs.org/">
-          <img src="building-apps-with-react/images/gatsby-logo.png" width="240" class="transparent" />
+          <img src="./images/gatsby-logo.png" width="240" class="transparent" />
           <p>Gatsby</p>
         </a>
       </td>
@@ -469,98 +469,98 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 <p>👵 ArcGIS API 3.x? 👴</p>
 <p>🚀 CLI blocks access to webpack config? 🔒</p>
 <p>🙈 Don't _want_ to config webpack? 😱</p>
 <div class="fragment">
   <p>No problem. Try [esri-loader](https://github.com/Esri/esri-loader)</p>
-  <img src="building-apps-with-react/images/esri-loader-band-aid-center-text.png" class="transparent" height="120" />
+  <img src="./images/esri-loader-band-aid-center-text.png" class="transparent" height="120" />
 </div>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Works with ArcGIS API [3.x](https://developers.arcgis.com/javascript/3/) <span class="fragment" data-fragment-index="1">_and_ 4.x</span>
 
 <div>
-  <img src="building-apps-with-react/images/esri.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/esri.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/esri.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/esri.png" class="transparent fragment"  data-fragment-index="1" height="120" />
+  <img src="./images/esri.png" class="transparent" height="120" />
+  <img src="./images/esri.png" class="transparent" height="120" />
+  <img src="./images/esri.png" class="transparent" height="120" />
+  <img src="./images/esri.png" class="transparent fragment"  data-fragment-index="1" height="120" />
 </div>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Works with _any_ React tool / library / framework
 
 <div>
-  <img src="building-apps-with-react/images/esri.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/react-js-img.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/redux-logo.svg" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/nextjs-white-logo.svg" class="transparent" height="100" />
-  <img src="building-apps-with-react/images/gatsby-logo.png" class="transparent" height="120" />
+  <img src="./images/esri.png" class="transparent" height="120" />
+  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="./images/react-js-img.png" class="transparent" height="120" />
+  <img src="./images/redux-logo.svg" class="transparent" height="120" />
+  <img src="./images/nextjs-white-logo.svg" class="transparent" height="100" />
+  <img src="./images/gatsby-logo.png" class="transparent" height="120" />
 </div>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### BTW... <span class="fragment" data-fragment-index="1">Not _just_ for Webpack & React</span>
 
 <div class="fragment" data-fragment-index="1">
-  <img src="building-apps-with-react/images/webpack-icon-square-big.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/react-js-img.png" class="transparent" height="120" />
+  <img src="./images/webpack-icon-square-big.png" class="transparent" height="120" />
+  <img src="./images/react-js-img.png" class="transparent" height="120" />
 </div>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Works with _any_ module loader
 
 <div>
-  <img src="building-apps-with-react/images/esri.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/webpack-icon-square-big.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/rollup1.png" class="transparent" height="100" />
-  <img src="building-apps-with-react/images/parcel-og.png" class="transparent" height="140" />
+  <img src="./images/esri.png" class="transparent" height="120" />
+  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="./images/webpack-icon-square-big.png" class="transparent" height="120" />
+  <img src="./images/rollup1.png" class="transparent" height="100" />
+  <img src="./images/parcel-og.png" class="transparent" height="140" />
 </div>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Works with _any_ framework
 
 <div>
-  <img src="building-apps-with-react/images/esri.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/tomster-sm.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/angular.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/vue-logo.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/react-js-img.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/Dojo-New.png" class="transparent" height="120" />
+  <img src="./images/esri.png" class="transparent" height="120" />
+  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="./images/tomster-sm.png" class="transparent" height="120" />
+  <img src="./images/angular.png" class="transparent" height="120" />
+  <img src="./images/vue-logo.png" class="transparent" height="120" />
+  <img src="./images/react-js-img.png" class="transparent" height="120" />
+  <img src="./images/Dojo-New.png" class="transparent" height="120" />
 </div>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
 
-<img class="transparent" src="building-apps-with-react/images/800px-Npm-logo.svg.png" style="width: 300px; margin: 110px 0;">
+<img class="transparent" src="./images/800px-Npm-logo.svg.png" style="width: 300px; margin: 110px 0;">
 <h3><code>npm install --save esri-loader</code></h3>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
 
-<img class="transparent" src="building-apps-with-react/images/yarn-cat-eating-bower-bird.png">
+<img class="transparent" src="./images/yarn-cat-eating-bower-bird.png">
 <h3><code>yarn add esri-loader</code></h3>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Using [`loadModules()`](https://github.com/Esri/esri-loader#usage)
 
 ```js
@@ -576,7 +576,7 @@ loadModules([
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Look [familiar](https://developers.arcgis.com/javascript/latest/sample-code/intro-mapview/index.html)?
 
 ```js
@@ -592,7 +592,7 @@ require([
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### [Lazy loads the ArcGIS API](https://github.com/Esri/esri-loader#lazy-loading-the-arcgis-api-for-javascript) by default
 
 ```js
@@ -607,7 +607,7 @@ const [Map, MapView] = await loadModules(
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Additional options & patterns
 
 See the esri-loader docs for examples of:
@@ -618,7 +618,7 @@ See the esri-loader docs for examples of:
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### [esri-loader-hooks](https://github.com/tomwayson/esri-loader-hooks#usewebmap)
 
 ```jsx
@@ -633,39 +633,39 @@ function WebMap() {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### Example: [esri-loader-hooks](https://esri-loader-hooks.netlify.com/)
 
-<a href="https://esri-loader-hooks.netlify.com/"><img src="building-apps-with-react/images/esri-loader-hooks-screenshot.png" height="400"></a>
+<a href="https://esri-loader-hooks.netlify.com/"><img src="./images/esri-loader-hooks-screenshot.png" height="400"></a>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## Example: Create ArcGIS App
 
-<a href="https://create-arcgis-app.surge.sh/"><img width="852" src="building-apps-with-react/images/create-arcgis-app-screenshot.png" /></a>
+<a href="https://create-arcgis-app.surge.sh/"><img width="852" src="./images/create-arcgis-app-screenshot.png" /></a>
 
 [create-arcgis-app](https://github.com/tomwayson/create-arcgis-app)
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## Example: Next ArcGIS App
 
-<a href="https://next-arcgis-app.now.sh/"><img width="680" src="building-apps-with-react/images/next-arcgis-app-screenshot.png" /></a>
+<a href="https://next-arcgis-app.now.sh/"><img width="680" src="./images/next-arcgis-app-screenshot.png" /></a>
 
 [next-arcgis-app](https://github.com/tomwayson/next-arcgis-app)
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Conclusion
 
 <div>
-  <img src="building-apps-with-react/images/esri.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/webpack-icon-square-big.png" class="transparent" height="120" />
-  <img src="building-apps-with-react/images/react-js-img.png" class="transparent" height="120" />
+  <img src="./images/esri.png" class="transparent" height="120" />
+  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="./images/webpack-icon-square-big.png" class="transparent" height="120" />
+  <img src="./images/react-js-img.png" class="transparent" height="120" />
 </div>
 
 Note:
@@ -675,11 +675,11 @@ Go forth and prosper
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Summary
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-5.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
-![esri](img/esri-science-logo-white.png "esri")
+![esri](../img/esri-science-logo-white.png "esri")

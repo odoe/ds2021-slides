@@ -1,4 +1,4 @@
-<!-- .slide: data-background="img/2021/dev-summit/bg-1.png" data-background-size="cover -->
+<!-- .slide: data-background="../img/2021/dev-summit/bg-1.png" data-background-size="cover -->
 <h1 style="text-align: left; font-size: 80px;">ArcGIS API for JavaScript:</h1>
 <h2 style="text-align: left; font-size: 60px;">Building apps with ES Modules</h2>
 <p style="text-align: left; font-size: 30px;">René Rubalcava</p>
@@ -6,7 +6,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## What are ES Modules?
 
 Modern way of writing modular JavaScript
@@ -25,7 +25,7 @@ import WebMap from '@arcgis/core/WebMap';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Why does it matter?
 
 * Ideal for modern web development
@@ -35,12 +35,12 @@ import WebMap from '@arcgis/core/WebMap';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## Getting Started
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Assets
 
 > you need to copy the `@arcgis/core/assets` folder to your build directory
@@ -49,7 +49,7 @@ import WebMap from '@arcgis/core/WebMap';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Assets
 
 * a few ways to copy assets
@@ -70,7 +70,7 @@ import WebMap from '@arcgis/core/WebMap';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Assets
 
 * Does your app uses _routing_?
@@ -83,17 +83,17 @@ config.assetsPath = 'https://username.github.io/myrepo/dist/assets';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## webpack
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## rollup
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## webpack module federation
 
 * Dependency sharing
@@ -101,12 +101,12 @@ config.assetsPath = 'https://username.github.io/myrepo/dist/assets';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## hax
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## hax
 
 * You may not want to copy assets folder.
@@ -120,11 +120,11 @@ config.assetsPath = 'https://cdn.jsdelivr.net/npm/arcgis-js-api@4.18.1/assets';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Summary
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-5.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
 ![esri](img/esri-science-logo-white.png "esri")

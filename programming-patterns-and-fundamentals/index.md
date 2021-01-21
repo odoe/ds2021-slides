@@ -1,4 +1,4 @@
-<!-- .slide: data-background="img/2021/dev-summit/bg-1.png" data-background-size="cover -->
+<!-- .slide: data-background="../img/2021/dev-summit/bg-1.png" data-background-size="cover -->
 <h1 style="text-align: left; font-size: 80px;">ArcGIS API for JavaScript:</h1>
 <h2 style="text-align: left; font-size: 60px;">Programming Patterns</h2>
 <h2 style="text-align: left; font-size: 60px;">and Fundamentals</h2>
@@ -7,7 +7,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## What do I get with the 4x JSAPI?
 
 - Simplified and consistent API
@@ -17,7 +17,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## What are my options?
 
 - Needs?
@@ -27,18 +27,18 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Why start from scratch?
 
 - App starters
 - Widgets
 
-[![Esri Github](programming-patterns-and-fundamentals/images/github-esri.png)](https://github.com/search?o=desc&q=topic%3Ajavascript+org%3AEsri+fork%3Atrue&s=updated&type=Repositories)
+[![Esri Github](./images/github-esri.png)](https://github.com/search?o=desc&q=topic%3Ajavascript+org%3AEsri+fork%3Atrue&s=updated&type=Repositories)
 
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Widgets!
 - We'll look at a few <a href="(https://developers.arcgis.com/javascript/latest/sample-code/index.html?search=Widget)">widgets</a>
 - ~30 Widgets out of the box <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -48,7 +48,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Expand
  - [Clickable button to open container](https://codepen.io/kellyhutchins/pen/drOGNJ)
  - Icons
@@ -58,7 +58,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Use Portal Content
 
  - [Search](https://codepen.io/kellyhutchins/pen/EMNPmZ)
@@ -67,7 +67,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Popup
  - [Menu actions](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=popup-actions)
  - [Dock](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=popup-docking-position)
@@ -75,7 +75,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Popup Template
  - Define fields, charts, custom html content
  - [Using a function](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=popuptemplate-promise)
@@ -86,7 +86,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Author popup in online
  - [Web Map or Web Scene](http://jsapi.maps.arcgis.com/home/webmap/viewer.html?webmap=e9e5311ac8ec4110abe77b026ce87cf7)
  - Layer.fromPortalItem
@@ -95,7 +95,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Feature
  - Display popup template content
  - [Hover](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=widgets-feature)
@@ -103,17 +103,17 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Architecture
 
  View + View Model
- ![Search View Model](programming-patterns-and-fundamentals/images/searchviewmodel.png)
+ ![Search View Model](./images/searchviewmodel.png)
 
 <aside class="notes"> Separate business logic and presentation. Link to doc  </aside>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## View Models
 
  - [Custom View](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=widgets-frameworks-react)
@@ -122,7 +122,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Geocoding
 
 ```js
@@ -137,7 +137,7 @@ locator.locationToAddress({ location: point });
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Geocoding
 
 ```js
@@ -148,7 +148,7 @@ searchVM.search(location);
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Geocoding
 
 ```js
@@ -162,7 +162,7 @@ portal.helperServices.geocode.map(geocoderService => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Widgets - Styling
  Available Themes
  <iframe  width='500' height='400' scrolling='no' title='Themes' src='//codepen.io/kellyhutchins/embed/preview/Lqebdm/?height=300&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/kellyhutchins/pen/Lqebdm'>Theme Tester</a> by Kelly Hutchins (<a href='https://codepen.io/kellyhutchins'>@kellyhutchins</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -172,7 +172,7 @@ portal.helperServices.geocode.map(geocoderService => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Widgets - Styling
  - CSS Extension language
  - SASS
@@ -183,12 +183,12 @@ portal.helperServices.geocode.map(geocoderService => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Map and View
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Map and View
 
 ```js
@@ -208,7 +208,7 @@ const sView = new SceneView({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Basemaps and Ground
 
 - Convenience Strings
@@ -232,7 +232,7 @@ const map = new Map({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Basemaps and Ground
 
 ```js
@@ -257,7 +257,7 @@ const map = new Map({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
 ## Basemap and Ground
 
 <iframe height='500' scrolling='no' title='VT Basemaps' src='//codepen.io/odoe/embed/preview/rpQOEM/?height=300&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/rpQOEM/'>VT Basemaps</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -265,7 +265,7 @@ const map = new Map({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Collections
 
 - [`esri/core/Collection`](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html)
@@ -277,7 +277,7 @@ const map = new Map({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Working with Accessor
 
 - Objects are have properties that can be:
@@ -288,7 +288,7 @@ const map = new Map({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ### Accessor - property access
 
 ```ts
@@ -308,7 +308,7 @@ view.set("map.basemap.title", "new title");
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ### Accessor - property watching
 
 ```ts
@@ -335,7 +335,7 @@ watchUtils.whenTrue(view, "stationary", () => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ### Accessor - autocasting and single constructor
 
 ```js
@@ -360,12 +360,12 @@ watchUtils.whenTrue(view, "stationary", () => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Promises
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Promises
 
 - All asynchronous methods return a promise, no more [events](https://developers.arcgis.com/javascript/jsapi/querytask-amd.html#events)
@@ -377,7 +377,7 @@ layer.queryFeatures(query).then(handleResult).catch(handleError);
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Promises with async/await
 
 - work with native promises
@@ -392,7 +392,7 @@ const doQuery = async (query) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Promises
 
 - Load resources
@@ -413,7 +413,7 @@ view.when(() => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Promises
 
 ```js
@@ -435,7 +435,7 @@ view.when(() => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## async/await
 
 ```js
@@ -458,12 +458,12 @@ catch(error) {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Patterns
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Interactivity with view events
 
 - Use view events to interact with the view
@@ -479,7 +479,7 @@ view.on("drag", event => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Interactivity with view events
 
 - Access the features on click
@@ -498,7 +498,7 @@ view.on("click", ({ x, y }) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## goTo() with View
 
 - Sets the view to a given target.
@@ -507,7 +507,7 @@ view.on("click", ({ x, y }) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Loadables
 
 - brings better control, and scheduling of loading resources.
@@ -517,7 +517,7 @@ view.on("click", ({ x, y }) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Loadables
 
 - `WebMap` / `WebScene` need to load:
@@ -530,7 +530,7 @@ view.on("click", ({ x, y }) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ```js
   //In a single page application, get a feature from a FeatureLayer from a WebMap without displaying it, ASAP!
   const webmap = new WebMap({
@@ -558,7 +558,7 @@ view.on("click", ({ x, y }) => {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Zoom or Scale
 
 ```js
@@ -575,7 +575,7 @@ const view = new MapView({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## Zoom is not Scale
 
 ```js
@@ -593,7 +593,7 @@ const view = new MapView({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## WebMap is still a Map
 
 ```js
@@ -608,7 +608,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
 ## WebMap is still a Map
 
 <iframe height='500' scrolling='no' title='Local bookmarks' src='//codepen.io/odoe/embed/preview/QxrEVX/?height=500&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/QxrEVX/'>Local bookmarks</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -616,7 +616,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## Sublayer to FeatureLayer
 
 - You can extract a FeatureLayer from MapImageLayer Sublayer
@@ -625,7 +625,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
 ## Sublayer to FeatureLayer
 
 <iframe height='500' scrolling='no' title='createFeatureLayer' src='//codepen.io/odoe/embed/preview/PaxeyO/?height=500&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/PaxeyO/'>createFeatureLayer</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -633,7 +633,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## createQuery
 
 - When you can do `layer.createQuery()`
@@ -643,7 +643,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
 ## createQuery
 
 <iframe height='500' scrolling='no' title='createQuery' src='//codepen.io/odoe/embed/preview/rKQqQW/?height=500&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/rKQqQW/'>createQuery</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -651,7 +651,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## MapImageLayer
 
 - If you want to modify Sublayers, do it after you load the layer
@@ -660,7 +660,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
 ## MapImageLayer
 
 <iframe height='500' scrolling='no' title='MapImageLayer - Load Sublayers' src='//codepen.io/odoe/embed/preview/WyYBwL/?height=500&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/WyYBwL/'>MapImageLayer - Load Sublayers</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -668,7 +668,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## LayerViews
 
 - Renders the Layer
@@ -679,7 +679,7 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
 ## LayerViews
 
 <iframe height='500' scrolling='no' title='LayerView - Ready' src='//codepen.io/odoe/embed/preview/YvRJgj/?height=500&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/YvRJgj/'>LayerView - Ready</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -687,11 +687,11 @@ const map = new WebMap({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Summary
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-5.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
-![esri](img/esri-science-logo-white.png "esri")
+![esri](../img/esri-science-logo-white.png "esri")
