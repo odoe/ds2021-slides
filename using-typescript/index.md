@@ -9,25 +9,49 @@
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## Agenda
+</br>
 
-- Development tooling & setup
-- Working with the 4.x JS API
-- Accessor, decorators, and advanced concepts
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## Super quick TS intro
+ - What is TypeScript?
+ - Why use TypeScript?
+ - Setup and First steps
+ - Live Action Demo
+ - Where can I get more info?
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## Superset of JavaScript
+## What is TypeScript?
 
-- *Transpiles* to JavaScript
-- ESNext features (import, =>, rest/spread, async/await, etc)
-- Types
-- Compatible with existing JavaScript
+<a href="https://www.typescriptlang.org/" target="_blank">
+<img style="float:center;" src="images/TypeScript_Superset_JavaScript.png" alt="TypeScript_Superset_JavaScript">
+</a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Where do I begin?
+
+<a href="https://www.typescriptlang.org/" target="_blank">
+<img src="images/TS.png" alt="TypeScript landing page" width="1037" height="516">
+</a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## **Developer Setup**
+
+<a href="https://developers.arcgis.com/javascript/latest/guide/typescript-setup/index.html" target="_blank">
+<img src="images/TypeScript - Setting up.png" alt="TypeScript - Setting up">
+</a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## **Developer Setup**
+
+<a href="https://developers.arcgis.com/javascript/latest/guide/typescript-setup/index.html" target="_blank">
+<img src="images/TS_setup.png" alt="Setup_TS">
+</a>
 
 ---
 
@@ -42,37 +66,89 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-## Development tooling
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Why use TypeScript?
+</br>
+TypeScript adds *type* support to JavaScript
+</br>
+</br>
+<img src="images/TS_1a.png" alt="TypeScript_Example1">
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Why use TypeScript?
+</br>
+Enhanced IDE support
+</br>
+<img src="images/TS_2.png" alt="TypeScript_Example2">
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Why use TypeScript?
+</br>
+Makes use of the latest JavaScript features
+</br>
+</br>
+<img src="images/promise_async_await_carbon4.png" alt="TypeScript_Example3">
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Why use TypeScript?
+</br>
+Makes use of the latest JavaScript features
+</br>
+</br>
+<img src="images/dynamicModule2.png" alt="TypeScript_Example4">
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Setup and First steps
+
+1. The recommended way to install TypeScript is via `node` and `npm`.
+
+2. Make sure to install TypeScript globally: <br>
+```bash
+npm install -g typescript
+```
+3. Install the ArcGIS API for JavaScript Typings: <br>
+```bash
+npm install --save @types/arcgis-js-api
+```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Essentials
+</br>
+TypeScript
 
-- typescript: `npm install --save-dev typescript`
-- JS API 4.x typings: `npm install --save-dev @types/arcgis-js-api`
-- JS API 3.x typings: `npm install --save-dev @types/arcgis-js-api@3`
+```bash
+npm install --save-dev typescript
+```
 
----
+</br>
+JS API 4.x typings
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## Recommended
+```bash
+npm install --save-dev @types/arcgis-js-api
+```
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-- tslint: `npm install --save-dev tslint`
+</br>
+JS API 3.x typings
 
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## Setting Up
-
-- [developers.arcgis.com/javascript/latest/guide/typescript-setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/index.html)
+```bash
+npm install --save-dev @types/arcgis-js-api@3
+```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-## Demo: Build an App from Scratch
+#### Demo: Build a TypeScript app from scratch
+<img style="float:center;" src="images/wheres_rene.png" alt="Rene_Softwhere_Engineer">
 
 ---
 
