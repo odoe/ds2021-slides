@@ -1,4 +1,4 @@
-<!-- .slide: data-background="img/2021/dev-summit/bg-1.png" data-background-size="cover -->
+<!-- .slide: data-background="../img/2021/dev-summit/bg-1.png" data-background-size="cover -->
 <h1 style="text-align: left; font-size: 80px;">Using TypeScript</h1>
 <h2 style="text-align: left; font-size: 60px;">with the ArcGIS API for JavaScript</h2>
 <p style="text-align: left; font-size: 30px;">Noah Sager | René Rubalcava</p>
@@ -7,7 +7,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## Agenda
 
 - Development tooling & setup
@@ -16,12 +16,12 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Super quick TS intro
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Superset of JavaScript
 
 - *Transpiles* to JavaScript
@@ -31,7 +31,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Benefits of TypeScript
 
 ![TypeScript](using-typescript/images/typescript.jpg)
@@ -42,12 +42,12 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## Development tooling
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Essentials
 
 - typescript: `npm install --save-dev typescript`
@@ -56,7 +56,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Recommended
 
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -64,19 +64,19 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Setting Up
 
 - [developers.arcgis.com/javascript/latest/guide/typescript-setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/index.html)
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## Demo: Build an App from Scratch
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Imports
 
 - Can use AMD or ESM build
@@ -85,7 +85,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Auto-cast
 
 - Due to nature of types, auto-cast does not type-check
@@ -96,7 +96,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Typing improvements
 
 - Use of generics where possible `Collection<T>`
@@ -105,14 +105,14 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Tip!
 
 * [ArcGIS API for JavaScript Snippets](https://marketplace.visualstudio.com/items?itemName=Esri.arcgis-jsapi-snippets)
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Demo Steps:
 
 * `mkdir ts-demo && cd ts-demo`
@@ -122,7 +122,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../mg/2021/dev-summit/bg-2.png" -->
 ## index.html
 
 ```html
@@ -139,7 +139,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## tsconfig.json
 
 ```json
@@ -157,7 +157,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## css/main.css
 
 ```css
@@ -179,7 +179,7 @@ body,
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## app/main.ts
 
 > imports
@@ -193,7 +193,7 @@ import LayerList from "@arcgis/core/widgets/LayerList";
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## app/main.ts
 
 > WebMap and MapView
@@ -214,7 +214,7 @@ const view = new MapView({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## app/main.ts
 
 > LayerList
@@ -239,12 +239,12 @@ view.ui.add(layerList, "top-right");
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 > Demo the build
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### **Tip: Hide .js and .jsmap files **
 
 - Reduce clutter
@@ -259,7 +259,7 @@ view.ui.add(layerList, "top-right");
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### **Tip: Debugging with source maps**
   - Enable source maps in browser dev tools
   - Set breakpoints in .ts instead of .js
@@ -268,7 +268,7 @@ view.ui.add(layerList, "top-right");
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### **Tip: Use __esri instead of import**
 - Only contains type interfaces
 - Can use when not instantiating type
@@ -286,24 +286,24 @@ const layerList = new LayerList({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### **Where can I get more info?**
 
 - SDK Documentation
 - Esri-related training and webinars
 - ArcGIS Blogs
-- GeoNet, StackExchange, Spatial Community in Slack, etc.</br>
+- GeoNet, StackExchange, etc.</br>
 </br>
 <a href="https://www.esri.com/arcgis-blog/products/js-api-arcgis/mapping/using-typescript-with-the-arcgis-api-for-javascript/" target="_blank">
 <img style="float:bottom;" src="using-typescript/images/Using_TS_blog.png" alt="Using_TS_blog">
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-4.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Summary
 
 ---
 
-<!-- .slide: data-auto-animate data-background="img/2021/dev-summit/bg-5.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
 ![esri](img/esri-science-logo-white.png "esri")
