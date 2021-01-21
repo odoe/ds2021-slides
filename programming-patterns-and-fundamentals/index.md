@@ -35,7 +35,6 @@
 
 [![Esri Github](./images/github-esri.png)](https://github.com/search?o=desc&q=topic%3Ajavascript+org%3AEsri+fork%3Atrue&s=updated&type=Repositories)
 
-
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
@@ -454,7 +453,7 @@ view.when(() => {
 const init = async (doSomethingWithFeatures) => {
   await view.when();
   const layerView = await view.whenLayerView(map.findLayerById("awesomeLayer"));
-  const { target as layerView } = await watchUtils.whenFalseOnce(layerView, "updating");
+  await watchUtils.whenFalseOnce(layerView, "updating");
   const features = await layerView.queryFeatures();
   doSomethingWithFeatures(features);
 };
@@ -533,12 +532,13 @@ view.on("click", ({ x, y }) => {
 ## Loadables
 
 - `WebMap` / `WebScene` need to load:
- - the portal item
- - the layer module
- - the layer's item
+  - the portal item
+  - the layer module
+  - the layer's item
+
 - `MapView` / `SceneView` need to load:
- - the map
- - the layers
+  - the map
+  - the layers
 
 ---
 
@@ -553,7 +553,7 @@ view.on("click", ({ x, y }) => {
 
   webmap.load()
     .then(() => {
-      return webmap.getLayer('myFeatureLayerId').load();
+      return webmap.findLayerById('myFeatureLayerId').load();
     })
     .then(featureLayer => {
       return featureLayer.queryFeatures({
@@ -685,9 +685,7 @@ const map = new WebMap({
 
 - Renders the Layer
 - When is it done though?
-  - _hotly debated topic!_
   - When can you actually use it!!
-  - Behavior different with optimized FeatureLayer
 
 ---
 
