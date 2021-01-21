@@ -122,7 +122,7 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../mg/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## index.html
 
 ```html
@@ -306,4 +306,4 @@ const layerList = new LayerList({
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
-![esri](img/esri-science-logo-white.png "esri")
+![esri](images/esri-science-logo-white.png "esri")
