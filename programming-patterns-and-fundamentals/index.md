@@ -558,7 +558,7 @@ view.on("click", ({ x, y }) => {
     .then(result => {
       displayDetails(result.features[0]);
     })
-    .otherwise(error => {
+    .catch(error => {
       console.error(error);
     });
 ```
