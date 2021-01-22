@@ -338,7 +338,6 @@ watchUtils.whenTrue(view, "stationary", () => {
 ### Accessor - autocasting and single constructor
 
 ```js
-  // 4.x
   {
     type: "simple-marker",
     style: 'square',
@@ -349,12 +348,6 @@ watchUtils.whenTrue(view, "stationary", () => {
       width: 4
     }
   });
-
-  // 3.x
-  new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, 10,
-    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
-    new Color([255,0,0]), 4),
-    new Color([255,255,255,0.25]));
 ```
 
 ---
@@ -371,7 +364,8 @@ watchUtils.whenTrue(view, "stationary", () => {
 - The basic pattern looks like this:
 
 ```js
-layer.queryFeatures(query).then(handleResult).catch(handleError);
+layer.queryFeatures(query)
+	.then(handleResult).catch(handleError);
 ```
 
 ---
@@ -394,7 +388,8 @@ const doQuery = async (query) => {
 
 ```js
 async function loadMap(id) {
-  const { default: WebMap } = await import('@arcgis/core/WebMap');
+  const { default: WebMap } =
+	await import('@arcgis/core/WebMap');
   return new WebMap({
     portalItem: { id }
   });
@@ -452,7 +447,8 @@ view.when(() => {
 ```js
 const init = async (doSomethingWithFeatures) => {
   await view.when();
-  const layerView = await view.whenLayerView(map.findLayerById("awesomeLayer"));
+  const layerView =
+	await view.whenLayerView(map.findLayerById("awesomeLayer"));
   await watchUtils.whenFalseOnce(layerView, "updating");
   const features = await layerView.queryFeatures();
   doSomethingWithFeatures(features);
@@ -522,8 +518,6 @@ view.on("click", ({ x, y }) => {
 ## Loadables
 
 - brings better control, and scheduling of loading resources.
-- extension of `esri/core/Promise`
-- in 3.x, instantiating a layer loads it. in 4.0, it's an explicit call
 - the views automatically loads the map and its layers
 
 ---
@@ -544,7 +538,8 @@ view.on("click", ({ x, y }) => {
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ```js
-  //In a single page application, get a feature from a FeatureLayer from a WebMap without displaying it, ASAP!
+  // In a single page application, get a feature from a FeatureLayer
+  // from a WebMap without displaying it, ASAP!
   const webmap = new WebMap({
     portalItem: {
       id: 'affa021c51944b5694132b2d61fe1057'
@@ -602,29 +597,6 @@ const view = new MapView({
 - Scale is portable
 - Scale has meaning
 - We still snap to closest LOD/zoom
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
-## WebMap is still a Map
-
-```js
-const map = new WebMap({
-  basemap: { ... },
-  layers: [ ... ]
-});
-```
-
-- Still acts like a regular `Map`
-- Has some advantages
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
-## WebMap is still a Map
-
-<iframe height='500' scrolling='no' title='Local bookmarks' src='//codepen.io/odoe/embed/preview/QxrEVX/?height=500&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/QxrEVX/'>Local bookmarks</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
 
 ---
 
@@ -694,11 +666,6 @@ const map = new WebMap({
 
 <iframe height='500' scrolling='no' title='LayerView - Ready' src='//codepen.io/odoe/embed/preview/YvRJgj/?height=500&theme-id=31222&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/odoe/pen/YvRJgj/'>LayerView - Ready</a> by Rene Rubalcava (<a href='https://codepen.io/odoe'>@odoe</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## Summary
 
 ---
 
