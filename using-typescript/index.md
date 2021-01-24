@@ -157,7 +157,10 @@ npm install --save-dev @types/arcgis-js-api@3
 
 - Can use AMD or ESM build
 - _Hint:_ use the ESM build
-  - `import MapView from "@arcgis/core/views/MapView"`
+
+```ts
+import MapView from "@arcgis/core/views/MapView";
+```
 
 ---
 
@@ -178,13 +181,6 @@ npm install --save-dev @types/arcgis-js-api@3
 - Use of generics where possible `Collection<T>`
 - Strictly type events (`MapView.on("mouse-wheel", ...)`))
 - "Advanced" auto-casts like colors (`"red"`), screen sizes (`"5px"`) and basemaps `"streets"`
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## Tip!
-
-* [ArcGIS API for JavaScript Snippets](https://marketplace.visualstudio.com/items?itemName=Esri.arcgis-jsapi-snippets)
 
 ---
 
