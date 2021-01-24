@@ -336,24 +336,6 @@ view.ui.add(layerList, 'top-right');
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### **Tip: Use __esri instead of import**
-- Only contains type interfaces
-- Can use when not instantiating type
-
-```ts
-import esri = __esri;
-
-const layerList = new LayerList({
-  view,
-  listItemCreatedFunction: event => {
-    const item = event.item as esri.ListItem;
-  }
-});
-```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### **Where can I get more info?**
 
 - SDK Documentation
@@ -363,11 +345,6 @@ const layerList = new LayerList({
 </br>
 <a href="https://www.esri.com/arcgis-blog/products/js-api-arcgis/mapping/using-typescript-with-the-arcgis-api-for-javascript/" target="_blank">
 <img style="float:bottom;" src="./images/Using_TS_blog.png" alt="Using_TS_blog">
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## Summary
 
 ---
 
