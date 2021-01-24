@@ -189,7 +189,7 @@ import MapView from "@arcgis/core/views/MapView";
 
 ```sh
 mkdir ts-demo && cd ts-demo
-mkdir app && mkdir css
+mkdir src && touch src/index.ts
 npm init --yes && tsc --init
 npm i @arcgis/core rollup ## other rollup plugins
 ```
@@ -202,7 +202,6 @@ npm i @arcgis/core rollup ## other rollup plugins
 ```html
 <body>
   <div id="viewDiv"></div>
-  </div>
   <script src="index.js" type="module"></script>
 </body>
 ```
@@ -247,7 +246,7 @@ npm i @arcgis/core rollup ## other rollup plugins
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## app/main.ts
+## src/index.ts
 
 > imports
 
