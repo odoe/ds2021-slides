@@ -88,8 +88,80 @@ config.assetsPath = 'https://username.github.io/myrepo/dist/assets';
 
 ---
 
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## webpack builds
+
+```js
+// webpack.config.js
+const ArcGISPlugin = require('@arcgis/webpack-plugin');
+
+module.exports = {
+  ...
+  plugins: [
+    new ArcGISPlugin({ locales: ['en'] }),
+    ...
+  ]
+};
+```
+
+---
+
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## rollup
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## rollup builds
+
+```js
+// rollup.config.js
+import commonjs from "@rollup/plugin-commonjs";
+import del from "rollup-plugin-delete";
+import resolve from "@rollup/plugin-node-resolve";
+
+export default {
+  input: "src/main.js",
+  output: {
+    chunkFileNames: "chunks/[name]-[hash].js",
+    dir: "public",
+    format: "es"
+  },
+  plugins: [
+    del({ targets: "public/chunks", runOnce: true, verbose: true }),
+    resolve(),
+    commonjs()
+  ],
+  preserveEntrySignatures: false
+};
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+## snowpack
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## snowpack builds
+
+```js
+// snowpack.config.js
+module.exports = {
+    mount: {
+        // does not copy,
+        // but prevents snowpack from trying to parse
+        // worker and web assembly files
+        "node_modules/@arcgis/core/assets": {
+            url: "/assets", static: true,
+            resolve: false
+        },
+        "src": "/",
+    },
+    plugins: [["@snowpack/plugin-webpack"]]
+};
+```
 
 ---
 
@@ -127,4 +199,4 @@ config.assetsPath = 'https://cdn.jsdelivr.net/npm/arcgis-js-api@4.18.1/assets';
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
-![esri](img/esri-science-logo-white.png "esri")
+![esri](../img/esri-science-logo-white.png "esri")
