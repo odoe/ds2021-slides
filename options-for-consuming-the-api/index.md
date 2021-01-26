@@ -133,6 +133,177 @@ import MapView from '@arcgis/core/MapView';
 
 ---
 
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## A Third Way...
+
+- Can be hard to build `@arcgis/core` w/ _some_ tools
+- Or, you may want optimized CDN build without `require()`
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+
+### Try [esri-loader](https://github.com/Esri/esri-loader)
+
+<!--<img src="img/wayson/esri-loader-band-aid-center-text.png" class="transparent" height="120" />-->
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
+
+<img class="transparent" src="img/wayson/800px-Npm-logo.svg.png" style="width: 300px; margin: 110px 0;">
+<h3><code>npm install --save esri-loader</code></h3>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
+
+<img class="transparent" src="img/wayson/yarn-logo.png">
+<h3><code>yarn add esri-loader</code></h3>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade-in none" -->
+### Using [`loadModules()`](https://github.com/Esri/esri-loader#usage)
+
+```js
+import { loadModules } from 'esri-loader';
+
+loadModules([
+  "esri/Map",
+  "esri/views/MapView"
+]).then(([Map, MapView]) => {
+  // Code to create the map and view will go here
+});
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="none fade-out" -->
+### How it works
+
+```js
+// calls require() once the ArcGIS script is loaded
+
+require([
+  "esri/Map",
+  "esri/views/MapView"
+], (Map, MapView) => {
+  // Code to create the map and view will go here
+});
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+### [Lazy loads the ArcGIS API](https://github.com/Esri/esri-loader#lazy-loading-the-arcgis-api-for-javascript)
+
+<pre class="language-js">
+<code class="language-js">
+ // injects a script tag the first time
+const esriConfig = await loadModules(["esri/config"])
+esriConfig.useIdentity = false;
+
+// don't worry, this won't load the API again!
+const [Map, MapView] = await loadModules(
+  ["esri/Map", "esri/views/MapView"]
+);</code></pre>
+
+Defaults to latest CDN version
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" 
+data-transition="none fade-out" -->
+
+### Why Use esri-loader?
+
+- Keeps ArcGIS API code out of your build pipeline
+  - faster builds
+  - greater tool compatibility
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" 
+data-transition="none fade-out" -->
+
+### When to use esri-loader?
+
+- Rapid prototyping, hackathons
+- Your (hipster) tools have trouble with `@arcgis/core`
+- (Most) Server Side Rendering (SSR) scenarios
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+### Demo: esri-loader & Snowpack
+
+[esri-svelte-snowpack](https://github.com/tomwayson/esri-svelte-snowpack)
+
+- Scenario: hackathon, every second counts
+- Tools: [Snowpack](https://www.snowpack.dev/), [Svelte](https://svelte.dev/), [esri-loader](https://github.com/Esri/esri-loader)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+### Example: esri-loader & WMR
+
+[esri-wmr](https://github.com/tomwayson/esri-wmr)
+
+- Scenario: hipster startup, only cutting edge tools
+- Tools: [WMR](https://github.com/preactjs/wmr), [Preact](https://preactjs.com/), [esri-loader-hooks](https://github.com/tomwayson/esri-loader-hooks)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### [esri-wmr](https://github.com/tomwayson/esri-wmr)
+
+<a href="https://github.com/tomwayson/esri-wmr"><img height="400" src="./img/wayson/esri-wmr-screenshot.png" /></a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### [`<Map />` Component](https://github.com/tomwayson/esri-wmr/blob/d1ecd40e331814d42ed6a815c2dea7aeea0cad28/public/pages/about/map.js)
+
+```
+import { useMap, useGraphic } from 'esri-loader-hooks';
+
+export default function Map({ latitude, longitude }) {
+  const geometry = { type: 'point', latitude, longitude };
+  const symbol = { type: 'simple-marker', color: [226, 119, 40] };
+  // load the map
+  const center = [longitude, latitude];
+  const [ref, view] = useMap(
+    { basemap: 'streets' },
+    { view: { center, zoom: 13 } 
+  });
+  // show a point on the map
+  useGraphic(view, { geometry, symbol });
+  return (<div style={{ height: 400 }} ref={ref} />);
+}
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
+### Example: esri-loader & Next.js
+
+[next-arcgis-app](https://github.com/tomwayson/next-arcgis-app)
+
+- Scenario: content site, SSR critical for SEO
+- Tools: Next.js, [esri-loader](https://github.com/Esri/esri-loader)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### [next-arcgis-app](https://github.com/tomwayson/next-arcgis-app)
+
+<a href="https://github.com/tomwayson/next-arcgis-app"><img width="510" src="./img/wayson/next-arcgis-app-screenshot.png" /></a>
+
+---
+
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
 ![esri](../img/esri-science-logo-white.png "esri")
