@@ -200,3 +200,7 @@ config.assetsPath = 'https://cdn.jsdelivr.net/npm/arcgis-js-api@4.18.1/assets';
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
 ![esri](../img/esri-science-logo-white.png "esri")
+
+---
+
+<!-- .slide: data-auto-animate data-background="images/2021-feedback.jpg" -->

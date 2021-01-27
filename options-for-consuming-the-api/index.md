@@ -307,3 +307,7 @@ export default function Map({ latitude, longitude }) {
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
 ![esri](../img/esri-science-logo-white.png "esri")
+
+---
+
+<!-- .slide: data-auto-animate data-background="images/2021-feedback.jpg" -->
