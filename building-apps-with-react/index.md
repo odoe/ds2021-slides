@@ -426,10 +426,16 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-##  Example: [Nearby JavaScript](https://developers.arcgis.com/example-apps/nearby-javascript/)
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Hold your Suspense
 
-<img class="transparent" src="./images/nearby-featured-image.png">
+* Still not out of beta, so use at your own risk
+
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+##  Demo: [React with ESM](https://github.com/odoe/jsapi-esm-react)
 
 ---
 
