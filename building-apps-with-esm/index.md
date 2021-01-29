@@ -41,6 +41,40 @@ import WebMap from '@arcgis/core/WebMap';
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Prototyping with ESM CDN
+
+* _NOT FOR PRODUCTION_
+* Great way to test out some ideas
+* Native browser module loading
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Prototyping with ESM CDN
+
+```html
+<script type="module">
+  import ArcGISMap from "https://js.arcgis.com/4.18/@arcgis/core/Map.js";
+  import MapView from "https://js.arcgis.com/4.18/@arcgis/core/views/MapView.js";
+  
+  const map = new ArcGISMap({
+    basemap: 'topo-vector'
+  });
+  
+  const view = new MapView({
+    container: 'viewDiv',
+    map,
+    zoom: 4,
+    center: [-118, 34]
+  });
+</script>
+```
+
+- [demo](https://glitch.com/edit/#!/versed-lydian-promotion)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Assets
 
 > you need to copy the `@arcgis/core/assets` folder to your build directory
