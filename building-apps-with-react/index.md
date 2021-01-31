@@ -381,7 +381,7 @@ export function initialize(element: Element) {
 const elRef = useRef(null);
 useEffect(
   () => {
-    const loadMap = async (container) => {
+    const loadMap = async () => {
       const map = await import("../data/map");
       map.initialize(elRef.current);
     };
