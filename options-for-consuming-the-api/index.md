@@ -310,4 +310,4 @@ export default function Map({ latitude, longitude }) {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="images/2021-feedback.jpg" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/2021-feedback.jpg" -->
