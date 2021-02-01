@@ -31,7 +31,7 @@ import WebMap from '@arcgis/core/WebMap';
 * Ideal for modern web development
 * Supported in evergreen browsers
 * Works with modern build tooling
-    * webpack. rollup, and more
+    * snowpack, webpack, rollup, and more
 
 ---
 
@@ -107,7 +107,7 @@ import WebMap from '@arcgis/core/WebMap';
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Assets
 
-* Does your app uses _routing_?
+* Does your app use _routing_?
 * App isn't hosted in the root of your domain
 
 ```js
