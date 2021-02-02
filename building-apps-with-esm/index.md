@@ -117,6 +117,32 @@ config.assetsPath = 'https://username.github.io/myrepo/dist/assets';
 
 ---
 
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Import Syntax
+
+```js
+// avoid this
+import * as geometryEngine from '@arcgis/core/geometry/geometryEngine';
+
+// only load what you need
+import { buffer, intersect } from '@arcgis/core/geometry/geometryEngine';
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Import Syntax
+
+```js
+// avoid this
+import * as watchUtils from '@arcgis/core/core/watchUtils';
+
+// only load what you need
+import { whenFalseOnce, whenDefined } from '@arcgis/core/core/watchUtils';
+```
+
+---
+
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## webpack
 
@@ -132,7 +158,7 @@ const ArcGISPlugin = require('@arcgis/webpack-plugin');
 module.exports = {
   ...
   plugins: [
-    new ArcGISPlugin({ locales: ['en'] }),
+    new ArcGISPlugin(),
     ...
   ]
 };
