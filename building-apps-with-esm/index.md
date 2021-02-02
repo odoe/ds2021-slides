@@ -7,6 +7,17 @@
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+## Agenda
+
+* Why ES Modules?
+* ESM CDN
+* Assets
+* Import Syntax
+* Build Tools
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## What are ES Modules?
 
 Modern way of writing modular JavaScript
@@ -234,12 +245,7 @@ module.exports = {
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-## hax
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-## hax
+## Tip
 
 * You may not want to copy assets folder.
 * You can load assets from an external source
