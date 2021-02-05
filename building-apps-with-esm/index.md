@@ -42,7 +42,7 @@ import WebMap from '@arcgis/core/WebMap';
 * Ideal for modern web development
 * Supported in evergreen browsers
 * Works with modern build tooling
-    * snowpack, webpack, rollup, and more
+    * webpack, rollup, snowpack, and more
 
 ---
 
