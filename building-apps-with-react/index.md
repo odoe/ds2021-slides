@@ -13,77 +13,143 @@
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## ArcGIS API Framework Guides
+## Good News
 
-<a href="https://developers.arcgis.com/javascript/latest/guide/using-frameworks/"><img src="./images/jsapi-frameworks-screenshot.png" class="transparent" height="400" /></a>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## React
-
-<p><code>ui = f(s)</code></p>
+This is easier than ever!
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## ArcGIS API for JavaScript
 
-`🌎 = new F(id, container)`
+> It just works
+
+<p style="text-align: right;"><small>Tom, Dec 2020</small></p>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+## [@esri/react-arcgis](https://github.com/Esri/react-arcgis)
+
+```jsx
+<WebMap id="6627e1dd5f594160ac60f9dfc411673f" />
+```
+
+<a href="https://github.com/Esri/react-arcgis"><img src="./images/react-arcgis-screenshot.png" width="400" /></a>
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## ArcGIS API
+### Ready to use components
 
-1. <!-- .element: class="fragment" --> `Map`
-  - `basemap`, `portalItem`, ...
-1. <!-- .element: class="fragment" --> `View`
-  - `map`
-  - `container`
-  - ...
+```js
+import { Map, Scene, WebMap, WebScene } from '@esri/react-arcgis';
+```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## React
+### WebMaps and WebScenes
 
-1. <!-- .element: class="fragment" --> global state
-  - store
-1. <!-- .element: class="fragment" --> `<Provider store={store}>`
-  - <!-- .element: style="list-style: none" -->  `<Router>`
-    - <!-- .element: style="list-style: none" --> `<App>`
-      - <!-- .element: style="list-style: none" --> `<Layout>`
-1. <!-- .element: class="fragment" --> Virtual DOM -> DOM
+```jsx
+<WebMap id={itemId} />
+```
+
+<small>or</small>
+
+```jsx
+<WebScene id={itemId} />
+```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## Component as bridge
+### Maps and Views
 
-<div style="display: flex; flex-direction: row; justify-content: space-between">
-  <div>
-    <p><strong>React</strong></p>
-    <ul style="list-style: none;">
-      <li>`<App>`</li>
-      <li>&nbsp;&nbsp;`<Layout>`</li>
-      <li>&nbsp;&nbsp;&nbsp;&nbsp;`<Parent>`</li>
-    </ul>
-  </div>
-  <div>
-    <p style="margin-bottom: 0; margin-top: 8em; font-size: .7em" class="fragment" data-fragment-index="1">props -> state -> render -> ref -></p>
-    <p style="margin: 0">`<MapComponent />`</p>
-    <p style="margin-top: 0; font-size: .7em" class="fragment" data-fragment-index="3"><- state <- callback <- handler</p>
-  </div>
-  <div>
-    <strong>ArcGIS</strong>
-    <div class="fragment" style="font-size: .7em; margin-top: 7em;" data-fragment-index="2">
-      <div>`new Map(properties)`</div>
-      <div>`new MapView`</div>
-      <div>`({ container, map })`</div>
-    </div>
-  </div>
-</div>
+```js
+const mapProps = { basemap: "topo" };
+const viewProps = {
+    center: [-122.4443, 47.2529],
+    zoom: 6
+};
+```
+
+```jsx
+<Map mapProperties={mapProps} viewProperties={viewProps} />
+```
+
+<small>or</small>
+
+```jsx
+<Scene mapProperties={mapProps} viewProperties={viewProps}  />
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### [Custom Components](https://github.com/Esri/react-arcgis#creating-your-own-components)
+
+```jsx
+<Scene class="full-screen-map">
+  <BermudaTriangle />
+</Scene>
+```
+
+[![Custom component screenshot](./images/react-arcgis-custom-component-screenshot.jpg)](https://github.com/Esri/react-arcgis#creating-your-own-components)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+
+## Creating Your Own Components
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
+
+### Useful Component Concepts
+
+- refs
+- side effects
+- props/state
+- callbacks
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+
+### Creating a Map View
+
+1. container (`<div id="map"></div>`)
+1. map properties (`basemap: 'topo-vector'`)
+1. view properties (`zoom: 8`)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+
+### Creating a Map View (no React)
+
+```js
+const container = document.getElementById('map');
+const map = new ArcGISMap({
+  basemap: 'topo-vector'
+});
+const view = new MapView({
+  container,
+  map,
+  center: [-118, 34],
+  zoom: 8
+});
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+
+### Creating a Map View in React
+
+1. render container node
+1. _then_ create map view as a side effect
 
 ---
 
@@ -106,16 +172,17 @@
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Create `Map` and `View` in [`componentDidMount()`](https://reactjs.org/docs/react-component.html#componentdidmount)
+### Create `Map` & `View` as a [Side Effect](https://reactjs.org/docs/react-component.html#componentdidmount)
 
 ```js
   componentDidMount() {
+    const container = this.mapRef.current;
     const map = new ArcGISMap({
       basemap: 'topo-vector'
     });
     this.view = new MapView({
-      container: this.mapRef.current,
-      map: map,
+      container,
+      map,
       center: [-118, 34],
       zoom: 8
     });
@@ -138,37 +205,31 @@
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### Function Components
 
-`const NameTag = (props) => { <p>{props.name}</p> }`
+```jsx
+const NameTag = (props) => { <p>{props.name}</p> }
+```
 
-`<NameTag name="Tom" />`
+```jsx
+<NameTag name="Tom" />
+```
 
 <ul class="fragment">
   <li>no way to create refs
-  <li>no access to lifecycle methods
+  <li>no side effects
   <li>no state
 </ul>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### What the hook?
-
-Write function components that _use_:
-- refs
-- lifecycle methods
-- state
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ### React hooks
 
-* `useRef`
-* `useEffect`
-* `useState`
+* `useRef()`
+* `useEffect()`
+* `useState()`
 
 and [more](https://reactjs.org/docs/hooks-intro.html)!
 
@@ -242,9 +303,7 @@ setReady(true);
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### "Bind" view/map properties to props/state
-
-Hold onto view in state
+### Hold onto view in state
 
 ```ts
 const [view, setView] = useState(null);
@@ -273,9 +332,9 @@ Then use another effect to relay changes in props/state
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### 🎉 Success! 🎉
 
-<p>✅ created a map using a `ref` to React generated DOM</p>
-<p>✅ only destroy `MapView` when unmounting</p>
-<p>✅ relay changes in `props` (or `state`) to map/view</p>
+<p>✅ created a map using a <code>ref</code> to React generated DOM</p>
+<p>✅ only destroy <code>MapView</code> when unmounting</p>
+<p>✅ relay changes in <code>props</code> (or <code>state</code>) to map/view</p>
 <p class="fragment">🤔 Relay changes or events from map/view to React?</p>
 
 ---
@@ -300,23 +359,17 @@ use clean-up functions to remove event & watch handlers
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Component is key to integration
+### Components
 
-<small>... class-based or hooks 🙂</small>
+A bridge between React and ArcGIS
 
 <ul style="list-style: none">
-  <li>✅ acts as a bridge between React and ArcGIS</li>
   <li>✅ use a `ref` to get the view's `container`</li>
   <li>✅ send React `props` & `state` to map & view properties</li>
   <li>✅ send changes and events from ArcGIS to React via callbacks</li>
 </li>
 
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-### [Using the ArcGIS API for JavaScript with React](https://developers.arcgis.com/javascript/latest/guide/react)
-
-<iframe src="https://developers.arcgis.com/javascript/latest/guide/react/" style="width: 600px; height:  600px"></iframe>
+<small class="fragment">... class-based or hooks 🙂</small>
 
 ---
 
