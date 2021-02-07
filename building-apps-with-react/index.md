@@ -608,11 +608,11 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 ### Works with _any_ module loader
 
 <div>
-  <img src="./images/esri.png" class="transparent" height="120" />
-  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="./images/webpack-icon-square-big.png" class="transparent" height="120" />
-  <img src="./images/rollup1.png" class="transparent" height="100" />
-  <img src="./images/parcel-og.png" class="transparent" height="140" />
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="../common/images/webpack-icon-square-big.png" class="transparent" height="120" />
+  <img src="../common/images/rollup1.png" class="transparent" height="100" />
+  <img src="../common/images/parcel-og.png" class="transparent" height="140" />
 </div>
 
 ---
@@ -621,13 +621,13 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 ### Works with _any_ framework
 
 <div>
-  <img src="./images/esri.png" class="transparent" height="120" />
-  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="./images/tomster-sm.png" class="transparent" height="120" />
-  <img src="./images/angular.png" class="transparent" height="120" />
-  <img src="./images/vue-logo.png" class="transparent" height="120" />
-  <img src="./images/react-js-img.png" class="transparent" height="120" />
-  <img src="./images/Dojo-New.png" class="transparent" height="120" />
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="../common/images/react-js-img.png" class="transparent" height="120" />
+  <img src="../common/images/angular.png" class="transparent" height="120" />
+  <img src="../common/images/vue-logo.png" class="transparent" height="120" />
+  <img src="../common/images/1200px-Svelte_Logo.svg.png" class="transparent" height="120" />
+  <img src="../common/images/tomster-sm.png" class="transparent" height="120" />
 </div>
 
 ---
@@ -746,7 +746,7 @@ function WebMap() {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ## Conclusion
 
 <div>
@@ -760,11 +760,6 @@ Note:
 It's never been a better time to be a React dev
 It's never been a better time to be a ArcGIS dev
 Go forth and prosper
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## Summary
 
 ---
 
