@@ -104,17 +104,6 @@ const viewProps = {
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-
-### Useful Component Concepts
-
-- refs
-- side effects
-- props/state
-- callbacks
-
----
-
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 
 ### Creating a Map View
@@ -129,13 +118,16 @@ const viewProps = {
 
 ### Creating a Map View (no React)
 
+```html
+<div id="map"></div>
+```
+
 ```js
-const container = document.getElementById('map');
 const map = new ArcGISMap({
   basemap: 'topo-vector'
 });
 const view = new MapView({
-  container,
+  container: document.getElementById('map')
   map,
   center: [-118, 34],
   zoom: 8
@@ -148,120 +140,65 @@ const view = new MapView({
 
 ### Creating a Map View in React
 
-1. render container node
-1. _then_ create map view as a side effect
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Use a [ref](https://reactjs.org/docs/refs-and-the-dom.html) for the `container`
-
-```js
-  constructor(props) {
-    super(props);
-    this.mapRef = React.createRef();
-  }
-
-  render() {
-    return (
-      <div className="webmap" ref={this.mapRef} />
-    );
-  }
-```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Create `Map` & `View` as a [Side Effect](https://reactjs.org/docs/react-component.html#componentdidmount)
-
-```js
-  componentDidMount() {
-    const container = this.mapRef.current;
-    const map = new ArcGISMap({
-      basemap: 'topo-vector'
-    });
-    this.view = new MapView({
-      container,
-      map,
-      center: [-118, 34],
-      zoom: 8
-    });
-  }
-```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Clean up in [`componentWillUnmount()`](https://reactjs.org/docs/react-component.html#componentwillunmount)
-
-```js
-  componentWillUnmount() {
-    if (this.view) {
-      // destroy the map view
-      this.view.container = null;
-    }
-  }
-```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-### Function Components
-
-```jsx
-const NameTag = (props) => { <p>{props.name}</p> }
-```
-
-```jsx
-<NameTag name="Tom" />
-```
-
-<ul class="fragment">
-  <li>no way to create refs
-  <li>no side effects
-  <li>no state
-</ul>
+1. Component renders container node
+1. Create map view as a side effect
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-### React hooks
+
+### Component Concepts
+
+- rendering
+- refs
+- side effects
+- props/state
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
+### React [hooks](https://reactjs.org/docs/hooks-intro.html)
 
 * `useRef()`
 * `useEffect()`
 * `useState()`
 
-and [more](https://reactjs.org/docs/hooks-intro.html)!
+<p><small>See the <a href="https://github.com/odoe/2020-arcgis-presentations/tree/master/ds/ArcGIS-API-for-JavaScript-Using-Webpack-and-React">Using Webpack and React (2020) slides</a> for class based examples</small></p>
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### `useRef` for the `container`
+### Rendering the container
 
 ```jsx
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 
-export const WebMapView = () => {
+export const MapView = () => {
+  return <div id="map" />;
+};
+```
+
+<p class="fragment"><small><strong>Anti-pattern</strong>: do <strong>not</strong> render `id` in component</small></p>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### [`useRef`](https://reactjs.org/docs/hooks-reference.html#useref) for the `container`
+
+```jsx
+import React, { useRef } from 'react';
+
+export const MapView = () => {
   const mapRef = useRef();
 
-  return <div className="webmap" ref={mapRef} />;
+  return <div ref={mapRef} />;
 };
 ```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### `useEffect`
-
-Replaces some class lifecycle methods... mostly
-* `componentDidMount`
-* `componentDidUpdate`
-* `componentWillUnmount`
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### `useEffect` to create map and view
+### [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) to create map & view
 
 ```jsx
   const mapRef = useRef();
@@ -271,60 +208,35 @@ Replaces some class lifecycle methods... mostly
       const map = new ArcGISMap({
         basemap: 'topo-vector'
       });
-      const mapView = new MapView({
+      const view = new MapView({
         container: mapRef.current,
         map: map,
         center: [-118, 34],
         zoom: 8
       });
-      return () => {
-        // destroy the map view
-        mapView && mapView.container = null;
-      };
     }
-  , []); // componentDidMount & componentWillUnmount
-```
-
-... and clean up
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### `useState`
-
-Manage local state
-
-```ts
-const [ready, setReady] = useState(false);
-// later, maybe after map loads
-setReady(true);
+  , []); // only after initial render
 ```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Hold onto view in state
-
-```ts
-const [view, setView] = useState(null);
-// later in useEffect()
-setView(mapView);
-```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### "Bind" view/map properties to props/state
-
-Then use another effect to relay changes in props/state
+### `<MapView />` Component
 
 ```jsx
+import React, { useRef, useEffect } from 'react';
+import createMapView from './utils/map';
+
+export const MapView = () => {
+  const mapRef = useRef();
   useEffect(() => {
-    if (!view) {
-      return;
-    }
-    view.zoom = zoom;
-  }, [view, zoom]); // componentDidUpdate
+    // create map and view
+    const view = createMapView(mapRef.current);
+    // clean up
+    return () => { view && view.destroy(); };
+  }, []); // only after initial render
+  return <div ref={mapRef} />;
+}
 ```
 
 ---
@@ -332,44 +244,161 @@ Then use another effect to relay changes in props/state
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### 🎉 Success! 🎉
 
-<p>✅ created a map using a <code>ref</code> to React generated DOM</p>
+<p>✅ created a component that renders a <code>container</code>
+<p>✅ created a map view after the initial render</p>
 <p>✅ only destroy <code>MapView</code> when unmounting</p>
-<p>✅ relay changes in <code>props</code> (or <code>state</code>) to map/view</p>
-<p class="fragment">🤔 Relay changes or events from map/view to React?</p>
+<p class="fragment">🤔 component that takes map or view properties?</p>
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Use another effect to wire up a callback
+### Map & view properties
+
+```jsx
+<MapView basemap="streets" zoom="13" />
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Use React `props`
+
+```jsx
+export const MapView = ({ basemap, zoom }) => {
+  const mapRef = useRef();
+  useEffect(() => {
+    // read map and view properties from props
+    const mapProperties = { basemap };
+    const viewProperties = { zoom };
+    // create map and view
+    const view = createMapView(mapRef.current, mapProperties, viewProperties);
+    // clean up
+    return () => { view && view.destroy(); };
+  }, []); // only after initial render
+  return <div ref={mapRef} />;
+}
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Update map & view properties
+
+```jsx
+<MapView basemap={{basemap}} zoom="13" />
+<BasemapSelect value={{basemap}} onChange={{setBasemap}} />
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### `useState`
+
+```jsx
+const [basemap, setBasemap] = useState('topo-vector');
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### `useState`
+
+```jsx
+export const MapPage => () {
+  const [basemap, setBasemap] = useState('topo-vector');
+  return (
+    <MapView basemap={{basemap}} zoom="13" />
+    <BasemapSelect value={{basemap}} onChange={{setBasemap}} />
+  );
+}
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Update view or map properties
+
+Use another effect in `<MapView>`
+
+```jsx
+  useEffect(() => {
+    // TODO: view is undefined
+    view.map.basemap = basemap;
+  }, [basemap]); // called whenever basemap prop changes
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Hold onto view in state
+
+```jsx
+// in MapView component
+const [view, setView] = useState(null);
+// later in useEffect()
+setView(createMapView(mapRef.current, mapProperties, viewProperties));
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Only update if view has been created
+
+```jsx
+  useEffect(() => {
+    if (!view) {
+      // this was called before setView()
+      return;
+    }
+    view.map.basemap = basemap;
+  }, [view, basemap]);
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+### 🎉 Success! 🎉
+
+<p>✅ initialize map & view properties from <code>props</code></p>
+<p>✅ update map or view when <code>props</code> change</p>
+<p class="fragment">🤔 Relay map view changes to other components?</p>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Pass watch or event callbacks as props
+
+```jsx
+<MapView basemap={{basemap}} zoom="13" onClick={{logClick}} />
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Wire up handlers
+
+Use another effect in `<MapView>`
 
 ```jsx
   useEffect(() => {
     if (!view) {
       return;
     }
-    const handle = view.on('click', callback);
+    const handle = view.on('click', onClick);
     return function removeHandle() {
-      handle.remove();
+      handle && handle.remove();
     };
-  }, [view, callback]); // componentDidUpdate
+  }, [view, onClick]);
 ```
 
-use clean-up functions to remove event & watch handlers
+<p><small>use clean-up functions to remove event & watch handlers</small></p>
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### Components
 
-A bridge between React and ArcGIS
-
-<ul style="list-style: none">
-  <li>✅ use a `ref` to get the view's `container`</li>
-  <li>✅ send React `props` & `state` to map & view properties</li>
-  <li>✅ send changes and events from ArcGIS to React via callbacks</li>
-</li>
-
-<small class="fragment">... class-based or hooks 🙂</small>
+A bridge between your React app and the ArcGIS API
 
 ---
 
