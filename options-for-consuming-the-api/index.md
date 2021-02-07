@@ -433,7 +433,6 @@ data-transition="none fade-out" -->
 
 - Rapid prototyping, hackathons
 - Your (hipster) tools have trouble with `@arcgis/core`
-  - (Most) Server Side Rendering (SSR) scenarios
 
 ---
 
@@ -495,24 +494,6 @@ export default function Map({ latitude, longitude }) {
   return (<div style={{ height: 400 }} ref={ref} />);
 }
 ```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
-### Example: esri-loader & Next.js
-
-[next-arcgis-app](https://github.com/tomwayson/next-arcgis-app)
-
-- Scenario: content site, SSR critical for SEO
-- Tools: Next.js, [esri-loader](https://github.com/Esri/esri-loader)
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
-### [next-arcgis-app](https://github.com/tomwayson/next-arcgis-app)
-
-<a href="https://github.com/tomwayson/next-arcgis-app"><img width="510" src="../common/images/next-arcgis-app-screenshot.png" /></a>
-
 
 ---
 
