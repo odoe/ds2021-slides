@@ -133,26 +133,34 @@ import MapView from '@arcgis/core/MapView';
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
-## A Third Way...
-
-- Can be hard to build `@arcgis/core` w/ _some_ tools
-- Or, you may want optimized CDN build without `require()`
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
+## 😎 [@arcgis/core](https://npmjs.com/package/@arcgis/core) 👍
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### May **not** be right in _all_ scenarios 😦
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 
 ### Try [esri-loader](https://github.com/Esri/esri-loader)
 
-<!--<img src="img/wayson/esri-loader-band-aid-center-text.png" class="transparent" height="120" />-->
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="../common/images/webpack-icon-square-big.png" class="transparent" height="120" />
+  <img src="../common/images/rollup1.png" class="transparent" height="100" />
+  <img src="../common/images/parcel-og.png" class="transparent" height="140" />
+</div>
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
 
-<img class="transparent" src="img/wayson/800px-Npm-logo.svg.png" style="width: 300px; margin: 110px 0;">
+<img class="transparent" src="../common/images/800px-Npm-logo.svg.png" style="width: 300px; margin: 110px 0;">
 <h3><code>npm install --save esri-loader</code></h3>
 
 ---
@@ -160,7 +168,7 @@ import MapView from '@arcgis/core/MapView';
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
 
-<img class="transparent" src="img/wayson/yarn-logo.png">
+<img class="transparent" src="../common/images/yarn-logo.png">
 <h3><code>yarn add esri-loader</code></h3>
 
 ---
@@ -211,29 +219,52 @@ const [Map, MapView] = await loadModules(
   ["esri/Map", "esri/views/MapView"]
 );</code></pre>
 
-Defaults to latest CDN version
+Defaults to latest CDN version <!-- .element class="fragment" -->
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" 
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
 data-transition="none fade-out" -->
 
-### Why Use esri-loader?
+### [esri-loader options](https://github.com/Esri/esri-loader/#configuring-esri-loader)
 
-- Keeps ArcGIS API code out of your build pipeline
-  - faster builds
-  - greater tool compatibility
+- Use an earlier release, even 3.x!
+- Use a local AMD build
+- Lazy load CSS
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" 
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### AMD build in a modern web app?
+
+<p class="fragment">Use esri-loader</p>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### Why Use AMD build?
+
+Keeps ArcGIS API code out of your build pipeline <!-- .element: class="fragment" -->
+
+<ul class="fragment">
+  <li>faster builds</li>
+  <li>greater tool compatibility</li>
+</ul>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
 data-transition="none fade-out" -->
 
 ### When to use esri-loader?
 
 - Rapid prototyping, hackathons
 - Your (hipster) tools have trouble with `@arcgis/core`
-- (Most) Server Side Rendering (SSR) scenarios
+  - (Most) Server Side Rendering (SSR) scenarios
 
 ---
 
@@ -260,7 +291,18 @@ data-transition="none fade-out" -->
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ### [esri-wmr](https://github.com/tomwayson/esri-wmr)
 
-<a href="https://github.com/tomwayson/esri-wmr"><img height="400" src="./img/wayson/esri-wmr-screenshot.png" /></a>
+<a href="https://github.com/tomwayson/esri-wmr"><img height="400" src="../common/images/esri-wmr-screenshot.png" /></a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### [esri-loader-hooks](https://github.com/tomwayson/esri-loader-hooks)
+
+```
+import { useMap, useGraphic } from 'esri-loader-hooks';
+```
+
+<p class="fragment">No <code>npm install</code> needed!</p>
 
 ---
 
@@ -300,7 +342,34 @@ export default function Map({ latitude, longitude }) {
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ### [next-arcgis-app](https://github.com/tomwayson/next-arcgis-app)
 
-<a href="https://github.com/tomwayson/next-arcgis-app"><img width="510" src="./img/wayson/next-arcgis-app-screenshot.png" /></a>
+<a href="https://github.com/tomwayson/next-arcgis-app"><img width="510" src="../common/images/next-arcgis-app-screenshot.png" /></a>
+
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
+## Conclusion
+
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="../common/images/react-js-img.png" class="transparent" height="120" />
+  <img src="../common/images/angular.png" class="transparent" height="120" />
+  <img src="../common/images/vue-logo.png" class="transparent" height="120" />
+  <img src="../common/images/1200px-Svelte_Logo.svg.png" class="transparent" height="120" />
+  <img src="../common/images/tomster-sm.png" class="transparent" height="120" />
+</div>
+
+Consuming the ArcGIS API is easier than ever!
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+### You have [options](https://developers.arcgis.com/javascript/latest/tooling-intro/)
+
+- [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/)
+- [esri-loader](https://github.com/Esri/esri-loader)
+- [AMD loader](https://developers.arcgis.com/javascript/latest/amd-build/)
 
 ---
 
