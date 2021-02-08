@@ -134,12 +134,29 @@ import MapView from '@arcgis/core/MapView';
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## 😎 [@arcgis/core](https://npmjs.com/package/@arcgis/core) 👍
+## 🤔 Why NOT use [@arcgis/core](https://npmjs.com/package/@arcgis/core)?
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
-### May **not** be right in _all_ scenarios 😦
+### ArcGIS API is different
+
+- powerful library with large footprint
+- sophisticated use of dynamic loading & web workers
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### AMD build in a modern web app?
+
+Keeps ArcGIS API code out of your build pipeline <!-- .element: class="fragment" -->
+
+<ul class="fragment">
+  <li>faster builds</li>
+  <li>greater tool compatibility</li>
+</ul>
 
 ---
 
@@ -152,7 +169,8 @@ import MapView from '@arcgis/core/MapView';
   <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
   <img src="../common/images/webpack-icon-square-big.png" class="transparent" height="120" />
   <img src="../common/images/rollup1.png" class="transparent" height="100" />
-  <img src="../common/images/parcel-og.png" class="transparent" height="140" />
+  <img src="../common/images/parcel-og.png" class="transparent" height="100" />
+  <img src="../common/images/snowpack-logo-white.png" class="transparent" height="90" />
 </div>
 
 ---
@@ -237,29 +255,6 @@ data-transition="none fade-out" -->
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
 data-transition="none fade-out" -->
 
-### AMD build in a modern web app?
-
-<p class="fragment">Use esri-loader</p>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
-data-transition="none fade-out" -->
-
-### Why Use AMD build?
-
-Keeps ArcGIS API code out of your build pipeline <!-- .element: class="fragment" -->
-
-<ul class="fragment">
-  <li>faster builds</li>
-  <li>greater tool compatibility</li>
-</ul>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
-data-transition="none fade-out" -->
-
 ### When to use esri-loader?
 
 - Rapid prototyping, hackathons
@@ -288,6 +283,13 @@ data-transition="none fade-out" -->
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### [WMR](https://github.com/preactjs/wmr)
+
+<a href="https://github.com/preactjs/wmr"><img height="400" src="../common/images/wmr-screenshot.png" /></a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ### [esri-wmr](https://github.com/tomwayson/esri-wmr)
 
 <a href="https://github.com/tomwayson/esri-wmr"><img height="400" src="../common/images/esri-wmr-screenshot.png" /></a>
@@ -300,8 +302,6 @@ data-transition="none fade-out" -->
 ```
 import { useMap, useGraphic } from 'esri-loader-hooks';
 ```
-
-<p class="fragment">No <code>npm install</code> needed!</p>
 
 ---
 
