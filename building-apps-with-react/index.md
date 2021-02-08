@@ -34,7 +34,7 @@ This is easier than ever!
 <WebMap id="6627e1dd5f594160ac60f9dfc411673f" />
 ```
 
-<a href="https://github.com/Esri/react-arcgis"><img src="./images/react-arcgis-screenshot.png" width="400" /></a>
+<a href="https://github.com/Esri/react-arcgis"><img src="../common/images/react-arcgis-screenshot.png" width="400" /></a>
 
 ---
 
@@ -94,7 +94,7 @@ const viewProps = {
 </Scene>
 ```
 
-[![Custom component screenshot](./images/react-arcgis-custom-component-screenshot.jpg)](https://github.com/Esri/react-arcgis#creating-your-own-components)
+[![Custom component screenshot](../common/images/react-arcgis-custom-component-screenshot.jpg)](https://github.com/Esri/react-arcgis#creating-your-own-components)
 
 ---
 
@@ -521,134 +521,63 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## 😎 [@arcgis/core](https://npmjs.com/package/@arcgis/core) 👍
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
+## 🤔 Why NOT use [@arcgis/core](https://npmjs.com/package/@arcgis/core)?
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## Popular React Tools & Frameworks
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### ArcGIS API is different
 
-<table class="clis">
-  <tbody>
-    <tr>
-      <td>
-        <a href="https://github.com/facebook/create-react-app">
-          <img src="./images/react-js-img.png" width="240" class="transparent" />
-          <p>create-react-app</p>
-        </a>
-      </td>
-      <td>
-        <a href="https://nextjs.org/">
-          <img style="margin: 80px 0" src="./images/nextjs-white-logo.svg" width="240" class="transparent" />
-          <p>Next.js</p>
-        </a>
-      </td>
-      <td>
-        <a href="https://www.gatsbyjs.org/">
-          <img src="./images/gatsby-logo.png" width="240" class="transparent" />
-          <p>Gatsby</p>
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="fragment">All insulate you from 😱 of webpack config</p>
+- powerful library with large footprint
+- sophisticated use of dynamic loading & web workers
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-<p>👵 ArcGIS API 3.x? 👴</p>
-<p>🚀 CLI blocks access to webpack config? 🔒</p>
-<p>🙈 Don't _want_ to config webpack? 😱</p>
-<div class="fragment">
-  <p>No problem. Try [esri-loader](https://github.com/Esri/esri-loader)</p>
-  <img src="./images/esri-loader-band-aid-center-text.png" class="transparent" height="120" />
-</div>
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### Keep ArcGIS API out of your build
+
+<ul class="fragment">
+  <li>faster builds</li>
+  <li>greater tool compatibility</li>
+</ul>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Works with ArcGIS API [3.x](https://developers.arcgis.com/javascript/3/) <span class="fragment" data-fragment-index="1">_and_ 4.x</span>
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 
-<div>
-  <img src="./images/esri.png" class="transparent" height="120" />
-  <img src="./images/esri.png" class="transparent" height="120" />
-  <img src="./images/esri.png" class="transparent" height="120" />
-  <img src="./images/esri.png" class="transparent fragment"  data-fragment-index="1" height="120" />
-</div>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Works with _any_ React tool / library / framework
-
-<div>
-  <img src="./images/esri.png" class="transparent" height="120" />
-  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="./images/react-js-img.png" class="transparent" height="120" />
-  <img src="./images/redux-logo.svg" class="transparent" height="120" />
-  <img src="./images/nextjs-white-logo.svg" class="transparent" height="100" />
-  <img src="./images/gatsby-logo.png" class="transparent" height="120" />
-</div>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### BTW... <span class="fragment" data-fragment-index="1">Not _just_ for Webpack & React</span>
-
-<div class="fragment" data-fragment-index="1">
-  <img src="./images/webpack-icon-square-big.png" class="transparent" height="120" />
-  <img src="./images/react-js-img.png" class="transparent" height="120" />
-</div>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Works with _any_ module loader
+### Try [esri-loader](https://github.com/Esri/esri-loader)
 
 <div>
   <img src="../common/images/esri.png" class="transparent" height="120" />
   <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
   <img src="../common/images/webpack-icon-square-big.png" class="transparent" height="120" />
   <img src="../common/images/rollup1.png" class="transparent" height="100" />
-  <img src="../common/images/parcel-og.png" class="transparent" height="140" />
+  <img src="../common/images/parcel-og.png" class="transparent" height="100" />
+  <img src="../common/images/snowpack-logo-white.png" class="transparent" height="90" />
 </div>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Works with _any_ framework
-
-<div>
-  <img src="../common/images/esri.png" class="transparent" height="120" />
-  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="../common/images/react-js-img.png" class="transparent" height="120" />
-  <img src="../common/images/angular.png" class="transparent" height="120" />
-  <img src="../common/images/vue-logo.png" class="transparent" height="120" />
-  <img src="../common/images/1200px-Svelte_Logo.svg.png" class="transparent" height="120" />
-  <img src="../common/images/tomster-sm.png" class="transparent" height="120" />
-</div>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
 
-<img class="transparent" src="./images/800px-Npm-logo.svg.png" style="width: 300px; margin: 110px 0;">
+<img class="transparent" src="../common/images/800px-Npm-logo.svg.png" style="width: 300px; margin: 110px 0;">
 <h3><code>npm install --save esri-loader</code></h3>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ### Installing [esri-loader](https://github.com/Esri/esri-loader#install)
 
-<img class="transparent" src="./images/yarn-cat-eating-bower-bird.png">
+<img class="transparent" src="../common/images/yarn-logo.png">
 <h3><code>yarn add esri-loader</code></h3>
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade-in none" -->
 ### Using [`loadModules()`](https://github.com/Esri/esri-loader#usage)
 
 ```js
@@ -664,45 +593,67 @@ loadModules([
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Look [familiar](https://developers.arcgis.com/javascript/latest/sample-code/intro-mapview/index.html)?
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="none fade-out" -->
+### How it works
 
 ```js
-// this is what loadModules() does under the hood
+// calls require() once the ArcGIS script is loaded
 
 require([
   "esri/Map",
   "esri/views/MapView"
-], function(Map, MapView) {
+], (Map, MapView) => {
   // Code to create the map and view will go here
 });
 ```
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### [Lazy loads the ArcGIS API](https://github.com/Esri/esri-loader#lazy-loading-the-arcgis-api-for-javascript) by default
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+### [Lazy loads the ArcGIS API](https://github.com/Esri/esri-loader#lazy-loading-the-arcgis-api-for-javascript)
 
-```js
- // loads API 1st time
+<pre class="language-js">
+<code class="language-js">
+ // injects a script tag the first time
 const esriConfig = await loadModules(["esri/config"])
 esriConfig.useIdentity = false;
+
 // don't worry, this won't load the API again!
 const [Map, MapView] = await loadModules(
   ["esri/Map", "esri/views/MapView"]
-);
+);</code></pre>
+
+Defaults to latest CDN version <!-- .element class="fragment" -->
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### [esri-loader options](https://github.com/Esri/esri-loader/#configuring-esri-loader)
+
+- Use an earlier release, even 3.x!
+- Use a local AMD build
+- Lazy load CSS
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+### [@esri/react-arcgis](https://github.com/Esri/react-arcgis#installation) uses esri-loader
+
+```bash
+npm i --save esri-loader @esri/react-arcgis
 ```
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Additional options & patterns
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
 
-See the esri-loader docs for examples of:
-- [Using a specific version of the ArcGIS API](https://github.com/Esri/esri-loader#from-a-specific-version)
-- [configuring Dojo](https://github.com/Esri/esri-loader#configuring-dojo)
-- [using ArcGIS types in TS](https://github.com/Esri/esri-loader#arcgis-types)
-- and [more](https://github.com/Esri/esri-loader#advanced-usage)
+### When to use esri-loader?
+
+- Rapid prototyping, hackathons
+- Your (hipster) tools have trouble with `@arcgis/core`
 
 ---
 
@@ -724,25 +675,7 @@ function WebMap() {
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### Example: [esri-loader-hooks](https://esri-loader-hooks.netlify.com/)
 
-<a href="https://esri-loader-hooks.netlify.com/"><img src="./images/esri-loader-hooks-screenshot.png" height="400"></a>
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-## Example: Create ArcGIS App
-
-<a href="https://create-arcgis-app.surge.sh/"><img width="852" src="./images/create-arcgis-app-screenshot.png" /></a>
-
-[create-arcgis-app](https://github.com/tomwayson/create-arcgis-app)
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-## Example: Next ArcGIS App
-
-<a href="https://next-arcgis-app.now.sh/"><img width="680" src="./images/next-arcgis-app-screenshot.png" /></a>
-
-[next-arcgis-app](https://github.com/tomwayson/next-arcgis-app)
+<a href="https://esri-loader-hooks.netlify.com/"><img src="../common/images/esri-loader-hooks-screenshot.png" height="400"></a>
 
 ---
 
@@ -750,16 +683,10 @@ function WebMap() {
 ## Conclusion
 
 <div>
-  <img src="./images/esri.png" class="transparent" height="120" />
-  <img src="./images/Heart_corazon.svg" class="transparent" height="120" />
-  <img src="./images/webpack-icon-square-big.png" class="transparent" height="120" />
-  <img src="./images/react-js-img.png" class="transparent" height="120" />
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="../common/images/react-js-img.png" class="transparent" height="120" />
 </div>
-
-Note:
-It's never been a better time to be a React dev
-It's never been a better time to be a ArcGIS dev
-Go forth and prosper
 
 ---
 
