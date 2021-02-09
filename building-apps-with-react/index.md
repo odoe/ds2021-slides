@@ -522,7 +522,7 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## 🤔 Why NOT use [@arcgis/core](https://npmjs.com/package/@arcgis/core)?
+## 🤔 An alternative to [@arcgis/core](https://npmjs.com/package/@arcgis/core)?
 
 ---
 
@@ -531,18 +531,7 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 
 - powerful library with large footprint
 - sophisticated use of dynamic loading & web workers
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
-data-transition="none fade-out" -->
-
-### Keep ArcGIS API out of your build
-
-<ul class="fragment">
-  <li>faster builds</li>
-  <li>greater tool compatibility</li>
-</ul>
+- can slow or in rare cases break your build <!-- .element class="fragment" -->
 
 ---
 
@@ -638,12 +627,62 @@ data-transition="none fade-out" -->
 
 ---
 
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### Keeps ArcGIS API out of your build
+
+<ul class="fragment">
+  <li>faster builds</li>
+  <li>greater tool compatibility</li>
+</ul>
+
+---
+
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ### [@esri/react-arcgis](https://github.com/Esri/react-arcgis#installation) uses esri-loader
 
 ```bash
 npm i --save esri-loader @esri/react-arcgis
 ```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### [esri-loader-hooks](https://www.npmjs.com/package/esri-loader-hooks)
+
+```bash
+npm i --save esri-loader esri-loader-hooks
+```
+
+```js
+import { 
+  useMap, useScene, useWebMap, useWebScene, // create a map or scene
+  useEvent, useEvents, useWatch, useWatches, // handle events or property changes
+  useGraphic, useGraphics // add graphics to a map/scene
+} from 'esri-loader-hooks';
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### [esri-loader-hooks](https://github.com/tomwayson/esri-loader-hooks#usewebmap)
+
+```jsx
+function WebMap() {
+  const [ref] = useWebMap('6627e1dd5f594160ac60f9dfc411673f');
+  return <div style={{ height: 400 }} ref={ref} />;
+}
+```
+
+<a href="https://esri-loader-hooks.netlify.com/"><img src="../common/images/react-arcgis-screenshot.png" width="400" /></a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+### Example: [esri-loader-hooks](https://esri-loader-hooks.netlify.com/)
+
+<a href="https://esri-loader-hooks.netlify.com/"><img src="../common/images/esri-loader-hooks-screenshot.png" height="400"></a>
 
 ---
 
@@ -654,28 +693,6 @@ data-transition="none fade-out" -->
 
 - Rapid prototyping, hackathons
 - Your (hipster) tools have trouble with `@arcgis/core`
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### [esri-loader-hooks](https://github.com/tomwayson/esri-loader-hooks#usewebmap)
-
-```jsx
-import React from 'react';
-import { useWebMap } from 'esri-loader-hooks';
-
-function WebMap() {
-  const [ref] = useWebMap('e691172598f04ea8881cd2a4adaa45ba');
-  return <div style={{ height: 400 }} ref={ref} />;
-}
-```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
-### Example: [esri-loader-hooks](https://esri-loader-hooks.netlify.com/)
-
-<a href="https://esri-loader-hooks.netlify.com/"><img src="../common/images/esri-loader-hooks-screenshot.png" height="400"></a>
 
 ---
 
