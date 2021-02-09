@@ -639,7 +639,7 @@ data-transition="none fade-out" -->
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ### [@esri/react-arcgis](https://github.com/Esri/react-arcgis#installation) uses esri-loader
 
 ```bash
@@ -648,12 +648,17 @@ npm i --save esri-loader @esri/react-arcgis
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
 ### [esri-loader-hooks](https://www.npmjs.com/package/esri-loader-hooks)
 
 ```bash
 npm i --save esri-loader esri-loader-hooks
 ```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### [esri-loader-hooks](https://www.npmjs.com/package/esri-loader-hooks)
 
 ```js
 import { 
@@ -693,6 +698,34 @@ data-transition="none fade-out" -->
 
 - Rapid prototyping, hackathons
 - Your (hipster) tools have trouble with `@arcgis/core`
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
+### Example: [esri-gatsby](https://github.com/tomwayson/esri-gatsby)
+
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/gatsby-logo.png" class="transparent" height="120" />
+</div>
+
+ArcGIS API + [Gatsby](https://www.gatsbyjs.com)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
+### Example: [esri-gatsby](https://tomwayson.github.io/esri-gatsby/)
+
+<a href="https://tomwayson.github.io/esri-gatsby/"><img src="../common/images/esri-gatsby-screenshot.png" height="400"></a>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### [Map Component](https://github.com/tomwayson/esri-gatsby/blob/fe793c9b1aadfebece9b397471e1e3e947317f02/src/components/Map.js)
+
+```jsx
+<Map latitude={34.0573} longitude={-117.1949} />
+```
 
 ---
 
