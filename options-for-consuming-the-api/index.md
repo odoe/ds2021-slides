@@ -15,12 +15,171 @@
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
-## Intro/Agenda Slide
+## Agenda Slide
+
+- Modules, modules, modules - what does it all mean?
+- ESM
+- esri-loader
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
-## Basic Slide
+## Modules, modules, modules - what does it all mean?
+
+---------------------
+
+- <span style="color:yellow;">ESM</span>
+  - NPM
+  - CDN
+- <span style="color:yellow; text-align: left;">AMD</span>
+  - NPM
+  - CDN
+
+---
+
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+
+ESM
+
+```js
+// test-esm.js
+const height = 300;
+const width = 300;
+
+
+export {height, width}
+
+```
+
+AMD
+
+```js
+// test-amd.js
+define(() => {
+    return {
+        height:300,
+        width: 300
+    }
+});
+
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## ES modules (a.k.a ESM)
+
+```js
+  import Map from '@arcgis/core/Map';
+
+  const map = new Map({
+    basemap: "gray-vector"
+  });
+
+```
+
+- Available as beta since 4.18 (December 2020)
+- Available via NPM (and CDN*)
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## ESM NPM
+
+```js
+  import Map from '@arcgis/core/Map';
+
+  const map = new Map({
+    basemap: "gray-vector"
+  });
+
+```
+
+- Installed via NPM
+- <span style="color:yellow;">Primarily used for local builds</span>
+- Pros: 
+  - Standardized module system
+  - Works natively in modern browsers
+  - Integrates well with most modern frameworks and build tools
+  - SSR
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## ES modules CDN
+
+<span style="color:red;">Testing and prototyping only</span>
+
+```js
+  import Map from "https://js.arcgis.com/4.18/@arcgis/core/Map.js";
+
+  const map = new Map({
+    basemap: "gray-vector"
+  });
+
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## AMD modules
+
+```js
+  require([ "esri/Map", "esri/views/MapView" ], 
+  (Map, MapView) => {
+    // Code to create the map and view will go here
+  });
+
+```
+
+- Available since 4.0 (May 2016)
+- Available via CDN and NPM
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## AMD CDN
+
+Perfect for Vanilla HTML/JS
+
+```js
+  require([ "esri/Map", "esri/views/MapView" ], 
+  (Map, MapView) => {
+    // Code to create the map and view will go here
+  });
+
+```
+
+- Pros: 
+  - Easy to update
+  - No installation, minimal configuration
+  - Highly optimized
+- Cons: 
+  - Requires a separate module loader
+  - Integration into frameworks requires <code>esri-loader</code>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## AMD NPM
+
+For API versions <= 4.17
+
+```js
+  require([ "esri/Map", "esri/views/MapView" ], 
+  (Map, MapView) => {
+    // Code to create the map and view will go here
+  });
+
+```
+
+- Pros:
+  - Works with Dojo 1 and RequireJS
+
+- Cons: 
+  - Requires a separate module loader
+  - Integration into frameworks requires <code>@arcgis/webpack-plugin*</code>
 
 ---
 
