@@ -522,7 +522,14 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## 🤔 An alternative to [@arcgis/core](https://npmjs.com/package/@arcgis/core)?
+## [@arcgis/core](https://npmjs.com/package/@arcgis/core)
+
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="../common/images/webpack-icon-square-big.png" class="transparent" height="120" />
+  <img src="../common/images/rollup1.png" class="transparent" height="100" />
+</div>
 
 ---
 
@@ -530,8 +537,20 @@ const WebMapView = lazy(() => import("../components/WebMapView"));
 ### ArcGIS API is different
 
 - powerful library with large footprint
-- sophisticated use of dynamic loading & web workers
-- can slow or in rare cases break your build <!-- .element class="fragment" -->
+- uses dynamic module loading & web workers
+- can slow your build; or not work w/ defaults <!-- .element class="fragment" -->
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### Is your bundler smarter than you?
+
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <span style="font-size: 110px; position: relative; top: -30px">🤔</span>
+  <img src="../common/images/parcel-og.png" class="transparent" height="100" />
+  <img src="../common/images/snowpack-logo-white.png" class="transparent" height="90" />
+</div>
 
 ---
 
