@@ -15,11 +15,22 @@
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
-## Agenda Slide
+## Agenda
 
 - Modules, modules, modules - what does it all mean?
 - ESM
 - esri-loader
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## Modules, modules, modules - what does it all mean?
+
+---------------------
+
+## <span style="color:yellow;">ESM</span>
+## <span style="color:yellow; text-align: left;">AMD</span>
+  
 
 ---
 
@@ -36,7 +47,6 @@
   - CDN
 
 ---
-
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 
