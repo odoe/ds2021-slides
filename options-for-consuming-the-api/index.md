@@ -18,7 +18,7 @@
 ## Agenda
 
 - Modules, modules, modules - what does it all mean?
-- ESM
+- ES Modules
 - esri-loader
 
 ---
@@ -28,21 +28,24 @@
 
 ---------------------
 
-## <span style="color:yellow;">ESM</span>
+## <span style="color:yellow;">ES Modules (a.k.a ESM)</span>
 ## <span style="color:yellow; text-align: left;">AMD</span>
   
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
-## Modules, modules, modules - what does it all mean?
 
----------------------
+<img src="./img/api-ref.png" />
 
-- <span style="color:yellow;">ESM</span>
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+
+- <span style="color:yellow;">ESM is available as:</span>
   - NPM
   - CDN
-- <span style="color:yellow; text-align: left;">AMD</span>
+- <span style="color:yellow; text-align: left;">AMD is available as</span>
   - NPM
   - CDN
 
@@ -54,12 +57,14 @@ ESM
 
 ```js
 // test-esm.js
-const height = 300;
-const width = 300;
+export const height = 300;
+export const width = 300;
 
+```
 
-export {height, width}
-
+```js
+// index.html
+import {height, width} from './test-esm.js';
 ```
 
 AMD
@@ -75,10 +80,22 @@ define(() => {
 
 ```
 
+```js
+// index.html
+require(['js/test-amd'],(test) => { let h = test.height); })
+```
+
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
-## ES modules (a.k.a ESM)
+
+<img width="1000" height="50" src="./img/require-not-defined.png" />
+<img width="1000" height="50" src="./img/define-not-defined.png" />
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+## ESM
 
 ```js
   import Map from '@arcgis/core/Map';
@@ -106,27 +123,26 @@ define(() => {
 
 ```
 
-- Installed via NPM
-- <span style="color:yellow;">Primarily used for local builds</span>
+- <code>@arcgis/core</code>
+- <span style="color:yellow;">Primary use case is local builds</span>
 - Pros: 
   - Standardized module system
   - Works natively in modern browsers
   - Integrates well with most modern frameworks and build tools
-  - SSR
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
-## ES modules CDN
+## ESM CDN
 
 <span style="color:red;">Testing and prototyping only</span>
 
 ```js
-  import Map from "https://js.arcgis.com/4.18/@arcgis/core/Map.js";
+import Map from "https://js.arcgis.com/4.18/@arcgis/core/Map.js";
 
-  const map = new Map({
-    basemap: "gray-vector"
-  });
+const map = new Map({
+  basemap: "gray-vector"
+});
 
 ```
 
@@ -153,12 +169,8 @@ define(() => {
 
 Perfect for Vanilla HTML/JS
 
-```js
-  require([ "esri/Map", "esri/views/MapView" ], 
-  (Map, MapView) => {
-    // Code to create the map and view will go here
-  });
-
+```html
+<script src="https://js.arcgis.com/4.18/"></script>
 ```
 
 - Pros: 
@@ -167,29 +179,29 @@ Perfect for Vanilla HTML/JS
   - Highly optimized
 - Cons: 
   - Requires a separate module loader
-  - Integration into frameworks requires <code>esri-loader</code>
+  - Use <code>esri-loader</code> for integration with frameworks and build tools
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
 ## AMD NPM
 
-For API versions <= 4.17
-
-```js
-  require([ "esri/Map", "esri/views/MapView" ], 
-  (Map, MapView) => {
-    // Code to create the map and view will go here
-  });
-
-```
+Use <code>arcgis-js-api</code> for API versions <= 4.17
 
 - Pros:
   - Works with Dojo 1 and RequireJS
 
 - Cons: 
   - Requires a separate module loader
-  - Integration into frameworks requires <code>@arcgis/webpack-plugin*</code>
+  - Integration into frameworks using webpack requires <code>@arcgis/webpack-plugin*</code>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" data-transition="fade" -->
+
+### <span style="color:yellow;">ESM</span> - works natively in modern browsers
+
+### <span style="color:yellow;">AMD</span> - requires a separate module loader
 
 ---
 
