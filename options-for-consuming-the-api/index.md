@@ -205,11 +205,6 @@ Use <code>arcgis-js-api</code> for API versions <= 4.17
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
-## Demo Slide
-
----
-
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
 ## ESM
 
