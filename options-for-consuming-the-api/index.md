@@ -307,10 +307,19 @@ import MapView from '@arcgis/core/MapView';
 - Convenience for prototyping
 - _Please use a build tool_
 
+ w/ defaults <!-- .element class="fragment" -->
+
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## 🤔 Why NOT use [@arcgis/core](https://npmjs.com/package/@arcgis/core)?
+## [@arcgis/core](https://npmjs.com/package/@arcgis/core)
+
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/Heart_corazon.svg" class="transparent" height="120" />
+  <img src="../common/images/webpack-icon-square-big.png" class="transparent" height="120" />
+  <img src="../common/images/rollup1.png" class="transparent" height="100" />
+</div>
 
 ---
 
@@ -318,21 +327,20 @@ import MapView from '@arcgis/core/MapView';
 ### ArcGIS API is different
 
 - powerful library with large footprint
-- sophisticated use of dynamic loading & web workers
+- uses dynamic module loading & web workers
+- can slow your build; or not work w/ defaults <!-- .element class="fragment" -->
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
-data-transition="none fade-out" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" data-transition="fade" -->
+### Is your bundler smarter than you?
 
-### AMD build in a modern web app?
-
-Keeps ArcGIS API code out of your build pipeline <!-- .element: class="fragment" -->
-
-<ul class="fragment">
-  <li>faster builds</li>
-  <li>greater tool compatibility</li>
-</ul>
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <span style="font-size: 110px; position: relative; top: -30px">🤔</span>
+  <img src="../common/images/parcel-og.png" class="transparent" height="100" />
+  <img src="../common/images/snowpack-logo-white.png" class="transparent" height="90" />
+</div>
 
 ---
 
@@ -431,6 +439,42 @@ data-transition="none fade-out" -->
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
 data-transition="none fade-out" -->
 
+### Keeps ArcGIS API out of your build
+
+<ul class="fragment">
+  <li>faster builds</li>
+  <li>greater tool compatibility</li>
+</ul>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### What's the down side?
+
+<ul class="fragment">
+  <li>no <code>import</code> statements for ArcGIS modules</li>
+  <li>Requires pre-existing AMD Build (CDN or local)</li>
+</ul>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
+### What about custom builds?
+
+<ul>
+  <li>My app only needs 200k of the ArcGIS API!</li>
+  <li class="fragment">That's all you'll get from an AMD build!</li>
+</ul>
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" 
+data-transition="none fade-out" -->
+
 ### When to use esri-loader?
 
 - Rapid prototyping, hackathons
@@ -439,9 +483,14 @@ data-transition="none fade-out" -->
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" data-transition="fade" -->
-### Demo: esri-loader & Snowpack
+### Demo: [esri-svelte-snowpack](https://github.com/tomwayson/esri-svelte-snowpack)
 
-[esri-svelte-snowpack](https://github.com/tomwayson/esri-svelte-snowpack)
+<div>
+  <img src="../common/images/esri.png" class="transparent" height="120" />
+  <img src="../common/images/1200px-Svelte_Logo.svg.png" class="transparent" height="120" />
+  <img src="../common/images/snowpack-logo-white.png" class="transparent" height="120" />
+</div>
+
 
 - Scenario: hackathon, every second counts
 - Tools: [Snowpack](https://www.snowpack.dev/), [Svelte](https://svelte.dev/), [esri-loader](https://github.com/Esri/esri-loader)
@@ -526,7 +575,7 @@ Consuming the ArcGIS API is easier than ever!
 
 - [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/)
 - [esri-loader](https://github.com/Esri/esri-loader)
-- [AMD loader](https://developers.arcgis.com/javascript/latest/amd-build/)
+- [AMD Modules](https://developers.arcgis.com/javascript/latest/amd-build/)
 
 ---
 
