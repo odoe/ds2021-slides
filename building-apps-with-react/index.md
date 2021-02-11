@@ -30,6 +30,18 @@ This is easier than ever!
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-3.png" -->
 ## [@esri/react-arcgis](https://github.com/Esri/react-arcgis)
 
+
+Ready to use components
+
+```js
+import { Map, Scene, WebMap, WebScene } from '@esri/react-arcgis';
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### Web Map Component
+
 ```jsx
 <WebMap id="6627e1dd5f594160ac60f9dfc411673f" />
 ```
@@ -39,26 +51,13 @@ This is easier than ever!
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Ready to use components
-
-```js
-import { Map, Scene, WebMap, WebScene } from '@esri/react-arcgis';
-```
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### WebMaps and WebScenes
+### Web Scene Component
 
 ```jsx
-<WebMap id={itemId} />
+<WebScene id="0614ea1f9dd043e9ba157b9c20d3c538" />
 ```
 
-<small>or</small>
-
-```jsx
-<WebScene id={itemId} />
-```
+<a href="https://github.com/Esri/react-arcgis"><img src="../common/images/webscene-screenshot.png" width="400" /></a>
 
 ---
 
@@ -198,6 +197,24 @@ export const MapView = () => {
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
+### [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) for side effects
+
+```jsx
+import React, { useRef, useEffect } from 'react';
+
+export const MapView = () => {
+  const mapRef = useRef();
+  useEffect(
+    () => { /* what you want to do */ },
+    [] /* when you want to do it */
+  });
+  return <div ref={mapRef} />;
+};
+```
+
+---
+
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ### [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) to create map & view
 
 ```jsx
@@ -247,12 +264,11 @@ export const MapView = () => {
 <p>✅ created a component that renders a <code>container</code>
 <p>✅ created a map view after the initial render</p>
 <p>✅ only destroy <code>MapView</code> when unmounting</p>
-<p class="fragment">🤔 component that takes map or view properties?</p>
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Map & view properties
+### Map & view properties 🤔
 
 ```jsx
 <MapView basemap="streets" zoom="13" />
@@ -316,9 +332,7 @@ export const MapPage => () {
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Update view or map properties
-
-Use another effect in `<MapView>`
+### Use another effect in `<MapView>`
 
 ```jsx
   useEffect(() => {
@@ -361,12 +375,11 @@ setView(createMapView(mapRef.current, mapProperties, viewProperties));
 
 <p>✅ initialize map & view properties from <code>props</code></p>
 <p>✅ update map or view when <code>props</code> change</p>
-<p class="fragment">🤔 Relay map view changes to other components?</p>
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Pass watch or event callbacks as props
+### Watch or event callbacks 🤔
 
 ```jsx
 <MapView basemap={{basemap}} zoom="13" onClick={{logClick}} />
@@ -375,9 +388,7 @@ setView(createMapView(mapRef.current, mapProperties, viewProperties));
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### Wire up handlers
-
-Use another effect in `<MapView>`
+### Wire up handlers in another effect
 
 ```jsx
   useEffect(() => {
