@@ -157,7 +157,10 @@ npm install --save-dev @types/arcgis-js-api@3
 
 - Can use AMD or ESM build
 - _Hint:_ use the ESM build
-  - `import MapView from "@arcgis/core/views/MapView"`
+
+```ts
+import MapView from "@arcgis/core/views/MapView";
+```
 
 ---
 
@@ -176,25 +179,20 @@ npm install --save-dev @types/arcgis-js-api@3
 ## Typing improvements
 
 - Use of generics where possible `Collection<T>`
-- Strictly type events (`MapView.on("mouse-wheel", ...)`))
+- Strictly type events (`mapView.on("mouse-wheel", ...)`))
 - "Advanced" auto-casts like colors (`"red"`), screen sizes (`"5px"`) and basemaps `"streets"`
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## Tip!
-
-* [ArcGIS API for JavaScript Snippets](https://marketplace.visualstudio.com/items?itemName=Esri.arcgis-jsapi-snippets)
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
 ## Demo Steps:
 
-* `mkdir ts-demo && cd ts-demo`
-* `mkdir app && mkdir css`
-* `npm init --yes && tsc --init`
-* `npm i @arcgis/core`
+```sh
+mkdir ts-demo && cd ts-demo
+mkdir src && touch src/index.ts
+npm init --yes && tsc --init
+npm i @arcgis/core rollup ## other rollup plugins
+```
 
 ---
 
@@ -203,12 +201,7 @@ npm install --save-dev @types/arcgis-js-api@3
 
 ```html
 <body>
-  <div class="app-container">
-    <header class="header">
-      <h2 class="heading">My ArcGIS App</h2>
-    </header>
-    <div id="viewDiv"></div>
-  </div>
+  <div id="viewDiv"></div>
   <script src="index.js" type="module"></script>
 </body>
 ```
@@ -220,43 +213,40 @@ npm install --save-dev @types/arcgis-js-api@3
 
 ```json
 {
-  "compilerOptions": {
-    "lib": ["ES2019", "DOM"],
-    "module": "amd", // output files as AMD modules
-    "sourceMap": true,
-    "target": "ES2019",
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
-  }
+	"compilerOptions": {
+		"lib": ["ES2019", "DOM"],
+		"sourceMap": true,
+		"target": "ES2019",
+		"noImplicitAny": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"moduleResolution": "node"
+	},
+	"include": ["src/**/*"]
 }
 ```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## css/main.css
-
-```css
-html,
-body,
-#viewDiv {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-}
-```
-
-* _and add it to html_
+## css
 
 ```html
-<link rel="stylesheet" href="css/main.css">
+<style>
+  html,
+  body,
+  #viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+</style>
 ```
 
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## app/main.ts
+## src/index.ts
 
 > imports
 
@@ -270,20 +260,20 @@ import LayerList from "@arcgis/core/widgets/LayerList";
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## app/main.ts
+## src/index.ts
 
 > WebMap and MapView
 
 ```ts
 const map = new WebMap({
   portalItem: {
-    id: "d5dda743788a4b0688fe48f43ae7beb9"
+    id: 'd5dda743788a4b0688fe48f43ae7beb9'
   }
 });
 
 // Add the map to a MapView
 const view = new MapView({
-  container: "viewDiv",
+  container: 'viewDiv',
   map
 });
 ```
@@ -291,7 +281,7 @@ const view = new MapView({
 ---
 
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-## app/main.ts
+## src/index.ts
 
 > LayerList
 
@@ -300,17 +290,17 @@ const view = new MapView({
 // ListItem in a LayerList instance
 const layerList = new LayerList({
   view,
-  listItemCreatedFunction: event => {
-    const item: esri.ListItem = event.item;
-    if (item.layer.type != "group") {
+  listItemCreatedFunction: (event: { item: __esri.ListItem }) => {
+    const item = event.item;
+    if (item.layer.type != 'group') {
       item.panel = {
-        content: "legend",
+        content: 'legend',
         open: true
-      } as esri.ListItemPanel;
+      } as __esri.ListItemPanel;
     }
   }
 });
-view.ui.add(layerList, "top-right");
+view.ui.add(layerList, 'top-right');
 ```
 
 ---
@@ -327,9 +317,10 @@ view.ui.add(layerList, "top-right");
 - VSCode: Add below to user preferences in files.exclude
 
 ```json
- "**/*.js.map": true,
-        "**/*.js": {
-            "when": "$(basename).ts"
+  "**/*.js.map": true,
+  "**/*.js": {
+      "when": "$(basename).ts"
+    }
 
 ```
 
@@ -341,24 +332,6 @@ view.ui.add(layerList, "top-right");
   - Set breakpoints in .ts instead of .js
 
   ![JS Code](./images/transpiled.png)
-
----
-
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-2.png" -->
-### **Tip: Use __esri instead of import**
-- Only contains type interfaces
-- Can use when not instantiating type
-
-```ts
-import esri = __esri;
-
-const layerList = new LayerList({
-  view,
-  listItemCreatedFunction: event => {
-    const item = event.item as esri.ListItem;
-  }
-});
-```
 
 ---
 
@@ -375,15 +348,10 @@ const layerList = new LayerList({
 
 ---
 
-<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-4.png" -->
-## Summary
-
----
-
 <!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/bg-5.png" -->
 
 ![esri](images/esri-science-logo-white.png "esri")
 
 ---
 
-<!-- .slide: data-auto-animate data-background="images/2021-feedback.jpg" -->
+<!-- .slide: data-auto-animate data-background="../img/2021/dev-summit/2021-feedback.jpg" -->

@@ -189,7 +189,7 @@ watchUtils.whenTrue(view, "stationary", () => {
       color: 'rgba(255, 255, 255, 0.5)'
       width: 4
     }
-  });
+  };
 ```
 
 ---
